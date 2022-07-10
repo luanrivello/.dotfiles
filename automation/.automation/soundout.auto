@@ -1,0 +1,46 @@
+#! /bin/bash
+
+#Microphone Pytorch
+#sleep 10
+#microfone="alsa_input.usb-MUSIC-BOOST_Trust_GXT_232_Microphone-00.mono-fallback"
+#noisetorch -i -s $microfone -t 60
+
+#Bluetooth
+aparelho="JBL Free"
+bltconnected="Connected: no"
+
+check_connection () {
+    bltconnected="$(\
+        bluetoothctl devices | cut -f2 -d' ' | while read uuid; do bluetoothctl info $uuid; done | \
+        grep -e "Device\|Connected\|Name" | grep -A 1 "$aparelho" | sed -n 2p \
+    )"
+}
+
+bluetoothctl devices | cut -f2 -d' ' | while read uuid; do bluetoothctl info $uuid; done | \
+grep -e "Device\|Connected\|Name" | grep -A 1 "$aparelho" | sed '2!d' \
+
+#Equalizer
+pulseaudio-equalizer enable
+while true
+do
+    sleep 3
+    check_connection
+    if [[ $bltconnected == *"Connected: yes"* ]]
+    then
+        sleep 4
+        result="$( pacmd list-sinks | grep -B 27 "$aparelho" | grep "name: " )"
+        result="$(echo ${result:7} | sed "s/[<,>]//g" )"
+        pacmd set-default-sink "$result"
+
+        pulseaudio-equalizer enable
+
+        while [[ $bltconnected == *"Connected: yes"* ]]
+        do
+            sleep 3
+            check_connection
+        done
+
+        pulseaudio-equalizer enable
+    fi
+done
+

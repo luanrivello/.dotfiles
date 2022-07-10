@@ -1,0 +1,10 @@
+#! /bin/bash
+
+#startup sound
+mpv --no-video ~/Pictures/Interface/sound/ps1startup.mp4
+
+#audio
+$HOME/.automation/soundin.auto &
+$HOME/.automation/soundout.auto &
+
+exit 1

@@ -1,0 +1,6 @@
+#! /bin/bash
+
+#Microphone Pytorch
+sleep 10000
+microfone="alsa_input.usb-MUSIC-BOOST_Trust_GXT_232_Microphone-00.mono-fallback"
+noisetorch -i -s $microfone -t 70

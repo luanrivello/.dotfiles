@@ -1,0 +1,8 @@
+Threshold = 90
+DisplayMonitorSources = false
+EnableUpdates = true
+GuiltTripped = true
+FilterInput = true
+FilterOutput = false
+LastUsedInput = "alsa_input.usb-MUSIC-BOOST_Trust_GXT_232_Microphone-00.mono-fallback"
+LastUsedOutput = ""
