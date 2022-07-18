@@ -1,4 +1,7 @@
 # GNU STOW FOLDER
-stow $HOME/.dotfiles/*  
-stow -D $HOME/.dotfiles/*  
-stow -R $HOME/.dotfiles/*  
+stow */  
+stow -D */  
+stow -R */   
+
+stow --adopt */  
+git restore .
