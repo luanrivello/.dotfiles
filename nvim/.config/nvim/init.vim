@@ -108,7 +108,6 @@ Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 call plug#end()
 
 "Hex Color Visualizer
-""let g:Hexokinase_highlighters = ['foregroundfull']
 let g:Hexokinase_highlighters = ['backgroundfull']
 let g:Hexokinase_optInPatterns = 'full_hex,rgb,rgba,hsl,hsla,colour_names'
 set termguicolors

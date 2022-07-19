@@ -45,8 +45,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 20
-    y: 20
+    x: 0
+    y: 0
 
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: false
@@ -66,7 +66,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 0.4
+  opacity: 0.8
 
   # Startup Mode (changes require restart)
   #
@@ -77,7 +77,7 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  startup_mode: Windowed
+  startup_mode: Maximized
 
   # Window title
   title: Alacritty
@@ -155,7 +155,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 16
+  size: 15.5
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -184,10 +184,13 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
+    #background: '#2b2b40'
+    #background: '#1b1b1b'
     background: '#000000'
-    foreground: '#ffffff'
+    foreground: '#ccccdd'
 
     # Bright and dim foreground colors
+    #
     # The dimmed foreground color is calculated automatically if it is not
     # present. If the bright foreground color is not set, or
     # `draw_bold_text_with_bright_colors` is `false`, the normal foreground
@@ -202,8 +205,8 @@ colors:
   # Allowed values are CellForeground/CellBackground, which reference the
   # affected cell, or hexadecimal colors like #ff00ff.
   cursor:
-    text: '#111122'
-    cursor: '#ff2266'
+    text: '#000000'
+    cursor: '#f32427'
 
   # Vi mode cursor colors
   #
@@ -212,8 +215,8 @@ colors:
   # Allowed values are CellForeground/CellBackground, which reference the
   # affected cell, or hexadecimal colors like #ff00ff.
   vi_mode_cursor:
-    text: '#111122'
-    cursor: '#ffff33'
+    text: '#000000'
+    cursor: '#f32427'
 
   # Search colors
   #
@@ -222,16 +225,16 @@ colors:
     # Allowed values are CellForeground/CellBackground, which reference the
     # affected cell, or hexadecimal colors like #ff00ff.
     matches:
-      foreground: '#ffff33'
-      background: '#111122'
+      foreground: '#ffffff'
+      background: '#000000'
 
     focused_match:
-      foreground: '#44ff88'
-      background: '#111122'
+      foreground: '#32ef23'
+      background: '#000000'
 
     bar:
-      foreground: '#44ff88'
       background: '#000000'
+      foreground: '#32ef23'
 
   # Keyboard regex hints
   hints:
@@ -272,31 +275,31 @@ colors:
   # Allowed values are CellForeground/CellBackground, which reference the
   # affected cell, or hexadecimal colors like #ff00ff.
   selection:
-    text: '#ffff33'
-    background: '#111122'
+    text: '#f32427'
+    background: '#000000'
 
   # Normal colors
   normal:
-    black:   '#111122'
-    red:     '#ff2266'
-    green:   '#44ff88'
-    yellow:  '#ffff33'
-    blue:    '#5588ff'
-    magenta: '#3333ff'
-    cyan:    '#33eeff'
-    white:   '#e0e0ff'
+    black:   '#111111'
+    red:     '#f32427'
+    green:   '#32ef23'
+    yellow:  '#ee4000'
+    blue:    '#2b2b60'
+    magenta: '#ec1460'
+    cyan:    '#4f73bd'
+    white:   '#ccccdd'
 
 
   # Bright colors
   bright:
-    black:   '#111122'
-    red:     '#ff2266'
-    green:   '#44ff88'
-    yellow:  '#ffff33'
-    blue:    '#5588ff'
-    magenta: '#3333ff'
-    cyan:    '#33eeff'
-    white:   '#e0e0ff'
+    black:   '#111111'
+    red:     '#f32427'
+    green:   '#32ef23'
+    yellow:  '#ee4000'
+    blue:    '#2b2b60'
+    magenta: '#ec1460'
+    cyan:    '#4f73bd'
+    white:   '#ccccdd'
 
   # Dim colors
   #
@@ -387,7 +390,7 @@ cursor:
     #   - ▇ Block
     #   - _ Underline
     #   - | Beam
-    shape: Underline
+    shape: Block
 
     # Cursor blinking state
     #
@@ -404,7 +407,7 @@ cursor:
   # the style of the active value of the normal cursor.
   #
   # See `cursor.style` for available options.
-  vi_mode_style: Block
+  vi_mode_style: None
 
   # Cursor blinking interval in milliseconds.
   blink_interval: 500
