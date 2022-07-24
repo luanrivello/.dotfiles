@@ -2,6 +2,9 @@
 
 #MyAlias
 #Basic Operation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 alias ll='ls -alFh'
 alias la='ls -A'
 alias l='clear && ls -CFlh'
@@ -11,20 +14,20 @@ alias rm='rm -Iv'
 alias cls='clear && neofetch'
 
 #Basic Programms
-alias txt=''
-alias img='sxiv -faq'
-alias pdf='epdfview'
-alias play='mpv -fs'
-alias listen=''
-alias files=''
-alias edit='krita'
-alias nav=''
+alias txt='devour mousepad'
+alias img='devour sxiv -faq'
+alias pdf='devour epdfview'
+alias play='devour mpv -fs'
+alias listen='devour '
+alias nav='devour '
+alias edit='devour krita'
+alias www='devour brave'
 
 #Operations
 alias update='sudo pacman -Syu'
-#alias indot='stow $HOME/.dotfiles/*/'
-#alias undot='stow -D $HOME/.dotfiles/*/'
-#alias redot='stow -R $HOME/.dotfiles/*/'
+alias indot='stow '
+alias undot='stow -D '
+alias redot='stow -R '
 alias umysite='sudo rsync -vr --delete-during --exclude '.git/' --exclude '.vscode/' --exclude 'README.md'--exclude '.gitignore' /run/media/$USER/Storage/codes/html-css-js/my-site/ /srv/http/ && systemctl restart httpd'
 alias brired='xrandr --output DisplayPort-0 --brightness 0.4 && xrandr --output HDMI-A-0 --brightness 0.4'
 alias brires='xrandr --output DisplayPort-0 --brightness 0.9 && xrandr --output HDMI-A-0 --brightness 0.9'
@@ -48,10 +51,7 @@ alias extract="tar -extract"
 alias n="nnn -adexSQ"
 alias nnn="nnn -Q"
 alias dk='sudo docker'
-alias sxiv='sxiv -f -q -a'
-#alias mpv='mpv -fs  -xy 3000:800'
-#alias mplayer='mplayer -fs -zoom -xy 3000:800'
-#alias sxiv='sxiv -faq'
+alias sxiv='sxiv -faq'
 alias matrix='cmatrix -bs'
 alias tar='tar -v'
 

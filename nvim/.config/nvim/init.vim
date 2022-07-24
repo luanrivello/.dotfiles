@@ -20,9 +20,10 @@ set smartindent
 set smarttab
 ""search
 set hlsearch
+"set nohlsearch
 set ignorecase
 set smartcase
-set incsearch
+"set incsearch
 ""undo & backup
 set noswapfile
 set nobackup
@@ -44,10 +45,13 @@ nnoremap <CR> :noh<CR><CR>
 ""buffers
 map gn :bn<cr>
 map gp :bp<cr>
-map gd :bd<cr>
+map gd :bx<cr>
+
+""theme
+map ga :AirlineTheme 
 
 "" Tracing spaces
-map gs :%s/\s\+$//g<cr> <C-o> zz
+map gt :%s/\s\+$//g<cr> <C-o> zz
 
 ""center
 nnoremap j jzz
@@ -124,7 +128,7 @@ let g:airline_right_alt_sep = '|'
 let g:airline#extensions#tabline#right_sep = ':'
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
-let g:airline_left_sep = ''
+"let g:airline_left_sep = ''
 let g:airline_right_sep = '▐'
 let g:airline_section_z = '%3p%% (%2l:%2v)'
 
@@ -140,7 +144,7 @@ let g:floaterm_keymap_toggle = '<F6>'
 let g:floaterm_keymap_next   = '<F7>'
 
 map <C-t> :FloatermNew! --height=0.8 --width=0.7 --name=terminal --title=terminal --autoclose=2<cr>
-map <C-n> :FloatermNew --height=0.9 --width=0.4 --name=nav --title=nav nnn<cr>
+map <C-n> :FloatermNew --height=0.9 --width=0.8 --name=nav --title=nav ranger<cr>
 
 "NERDTree
 "autocmd VimEnter * NERDTree | wincmd p

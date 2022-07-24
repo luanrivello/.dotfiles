@@ -1,0 +1,21 @@
+#! /bin/bash
+
+#audio
+MYHOME=/home/thermal
+$MYHOME/.config/automation/soundin.auto &
+$MYHOME/.config/automation/soundout.auto &
+
+#startup sound
+mpv --no-video $MYHOME/Interface/sound/ps1startup.mp4 &
+
+#wallpaper
+$MYHOME/.config/autmoation/wallpaper.sh
+
+#programs
+brave &
+steam &
+keepassxc &
+qbittorrent &
+discord &
+
+exit 1

@@ -4,10 +4,11 @@
   "IS_MINIMIZED": false,
   "WINDOW_BOUNDS": {
     "x": 0,
-    "y": 132,
+    "y": 161,
     "width": 1360,
-    "height": 741
+    "height": 739
   },
   "MINIMIZE_TO_TRAY": false,
-  "SKIP_HOST_UPDATE": true
+  "SKIP_HOST_UPDATE": true,
+  "OPEN_ON_STARTUP": false
 }

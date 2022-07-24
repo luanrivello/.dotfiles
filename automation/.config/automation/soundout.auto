@@ -1,9 +1,6 @@
 #! /bin/bash
 
 #Microphone Pytorch
-#sleep 10
-#microfone="alsa_input.usb-MUSIC-BOOST_Trust_GXT_232_Microphone-00.mono-fallback"
-#noisetorch -i -s $microfone -t 60
 
 #Bluetooth
 aparelho="JBL Free"
@@ -20,7 +17,7 @@ bluetoothctl devices | cut -f2 -d' ' | while read uuid; do bluetoothctl info $uu
 grep -e "Device\|Connected\|Name" | grep -A 1 "$aparelho" | sed '2!d' \
 
 #Equalizer
-pulseaudio-equalizer enable
+pulseaudio-equalizer enable &
 while true
 do
     sleep 3
