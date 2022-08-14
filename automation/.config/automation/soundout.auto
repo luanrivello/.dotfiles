@@ -13,6 +13,8 @@ check_connection () {
     )"
 }
 
+sleep 5
+
 bluetoothctl devices | cut -f2 -d' ' | while read uuid; do bluetoothctl info $uuid; done | \
 grep -e "Device\|Connected\|Name" | grep -A 1 "$aparelho" | sed '2!d' \
 

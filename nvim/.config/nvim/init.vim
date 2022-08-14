@@ -45,7 +45,7 @@ nnoremap <CR> :noh<CR><CR>
 ""buffers
 map gn :bn<cr>
 map gp :bp<cr>
-map gd :bx<cr>
+map gd :bd<cr>
 
 ""theme
 map ga :AirlineTheme 
@@ -143,8 +143,8 @@ let g:floaterm_keymap_prev   = '<F5>'
 let g:floaterm_keymap_toggle = '<F6>'
 let g:floaterm_keymap_next   = '<F7>'
 
-map <C-t> :FloatermNew! --height=0.8 --width=0.7 --name=terminal --title=terminal --autoclose=2<cr>
-map <C-n> :FloatermNew --height=0.9 --width=0.8 --name=nav --title=nav ranger<cr>
+map <C-t> :FloatermNew! --height=0.8 --width=0.7 --name=terminal --title=terminal --autoclose=2<CR><CR>
+map <C-n> :FloatermNew --height=0.9 --width=0.8 --name=nav --title=nav ranger<CR><CR>
 
 "NERDTree
 "autocmd VimEnter * NERDTree | wincmd p

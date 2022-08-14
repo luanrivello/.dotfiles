@@ -18,19 +18,24 @@ alias txt='devour mousepad'
 alias img='devour sxiv -faq'
 alias pdf='devour epdfview'
 alias play='devour mpv -fs'
+alias video='devour mpv -fs'
 alias listen='devour '
 alias nav='devour '
 alias edit='devour krita'
 alias www='devour brave'
 
 #Operations
+alias install='sudo pacman -S'
+alias remove='sudo pacman -Rsu'
 alias update='sudo pacman -Syu'
+alias search='sudo pacman -Ss'
 alias indot='stow '
 alias undot='stow -D '
 alias redot='stow -R '
 alias umysite='sudo rsync -vr --delete-during --exclude '.git/' --exclude '.vscode/' --exclude 'README.md'--exclude '.gitignore' /run/media/$USER/Storage/codes/html-css-js/my-site/ /srv/http/ && systemctl restart httpd'
-alias brired='xrandr --output DisplayPort-0 --brightness 0.4 && xrandr --output HDMI-A-0 --brightness 0.4'
+alias brired='xrandr --output DisplayPort-0 --brightness 0.3 && xrandr --output HDMI-A-0 --brightness 0.3'
 alias brires='xrandr --output DisplayPort-0 --brightness 0.9 && xrandr --output HDMI-A-0 --brightness 0.9'
+alias pontoautomatico='java -jar /mnt/Storage/programs/all/pontoAutomatico.jar'
 
 #Bookmarks
 alias storage='cd /mnt/Storage/'
@@ -51,7 +56,8 @@ alias extract="tar -extract"
 alias n="nnn -adexSQ"
 alias nnn="nnn -Q"
 alias dk='sudo docker'
-alias sxiv='sxiv -faq'
+alias sxiv='devour sxiv -faq'
+alias mpv='devour mpv'
 alias matrix='cmatrix -bs'
 alias tar='tar -v'
 

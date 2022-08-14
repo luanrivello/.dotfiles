@@ -2,20 +2,27 @@
 
 #audio
 MYHOME=/home/thermal
-$MYHOME/.config/automation/soundin.auto &
-$MYHOME/.config/automation/soundout.auto &
+~/.config/automation/soundin.auto &
+~/.config/automation/soundout.auto &
 
 #startup sound
-mpv --no-video $MYHOME/Interface/sound/ps1startup.mp4 &
+mpv --no-video ~/Interface/sound/ps1startup.mp4 &
 
-#wallpaper
-$MYHOME/.config/autmoation/wallpaper.sh
+#screen
+~/.config/automation/redshell.sh &
+~/.config/automation/wallpaper.auto &
+
+#hardware
+openrgb -p off &
 
 #programs
-brave &
-steam &
-keepassxc &
 qbittorrent &
-discord &
+keepassxc &
+#steam &
+brave &
+notion-app-enhanced &
+lbry &
 
-exit 1
+sleep 5
+#discord &
+exit 0

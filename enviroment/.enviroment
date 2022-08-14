@@ -1,12 +1,18 @@
 #!/bin/sh
 
+# Guidelines
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+# Standard
 export EDITOR="nvim"
 export VISUAL="nvim"
-export BROWSER="librewolf"
-export IMAGE="sxiv -f"
-export VIDEO="mpv -f"
-export PAGER="most -s"
-#export PAGER="less -SR"
+#export BROWSER="librewolf"
+export IMAGE="devour sxiv -f"
+export VIDEO="devour mpv -f"
+#export PAGER="most -s"
+export PAGER="less -SR"
 #export MANPAGER="nvimpager"
 #export MOST_INITFILE="~/.most.rc"
 
