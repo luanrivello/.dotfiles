@@ -1,5 +1,0 @@
-#! /bin/bash
-
-choices="ç\né\nê\nã\nõ"
-
-echo -e "$choices" | dmenu -i | xclip -selection clipboard

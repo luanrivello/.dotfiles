@@ -1,9 +1,24 @@
 #!/bin/sh
 
-# Guidelines
+#zsh path
+export ZDOTDIR=$HOME/.config/zsh
+
+#most path
+export MOST_INITFILE=$HOME/.config/most.rc
+
+# XDG Guidelines
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
+
+export XDG_DESKTOP_DIR="$HOME/Desktop"
+export XDG_DOCUMENTS_DIR="$HOME/Documents"
+export XDG_DOWNLOAD_DIR="$HOME/Downloads"
+export XDG_MUSIC_DIR="$HOME/Music"
+export XDG_PICTURES_DIR="$HOME/Pictures"
+export XDG_PUBLICSHARE_DIR="$HOME/Public"
+export XDG_TEMPLATES_DIR="$HOME/Templates"
+export XDG_VIDEOS_DIR="$HOME/Videos"
 
 # Standard
 export EDITOR="nvim"
@@ -19,9 +34,14 @@ export PAGER="less -SR"
 # Vim
 set -o vi
 
+## Paths
+# Automation bins
+export START_HOME="$HOME/.config/automation"
+export PATH=$PATH:$START_HOME
+
 # Java
-export JAVA_HOME="/usr/lib/java-14-openjdk/"
-export PATH=$JAVA_HOME/bin:$PATH
+export JAVA_HOME="/usr/lib/java-14-openjdk"
+export PATH=$PATH:$JAVA_HOME/bin
 export PATH_TO_FX="/lib/jvm/java-14-openjdk/lib/"
 
 # Go
@@ -34,34 +54,35 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 # NNN config
-export NNN_OPTS="aexHSQ"
+#export NNN_OPTS="aexHSQ"
+#
+#BLK="12" CHR="12" DIR="1A" EXE="2D" REG="93" HARDLINK="A2" SYMLINK="87" MISSING="3F" ORPHAN="A0" FIFO="D6" SOCK="CB" OTHER="C4"
+#export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
+#
+##export NNN_OPENER="nuke"
+#export NNN_FIFO="/tmp/nnn.fifo"
+#export NNN_TRASH=0
+#
+#export LC_COLLATE="C" # hidden files on top
+#
+#NNN_PLUG="d:dragdrop;"
+#NNN_PLUG+="n:bulknew;"
+#NNN_PLUG+="f:fzcd;"
+#NNN_PLUG+="u:getplugs;"
+#NNN_PLUG+="e:suedit;"
+#NNN_PLUG+="v:rsynccp;"
+#NNN_PLUG+="p:preview-tui;"
+##NNN_PLUG+="p:preview-tabbed;"
+#export NNN_PLUG
+#
+#NNN_BMS="h:~/;"
+#NNN_BMS+="d:~/Downloads;"
+#NNN_BMS+="w:~/workshop;"
+#NNN_BMS+="g:~/.config;"
+#NNN_BMS+="s:/run/media/$USER/Storage;"
+#NNN_BMS+="a:/run/media/$USER/Storage/shows;"
+#NNN_BMS+="c:/run/media/$USER/Storage/codes;"
+#NNN_BMS+="p:/run/media/$USER/Storage/ccc;"
+#NNN_BMS+="m:/run/media/$USER/Storage/multimedia;"
+#export NNN_BMS
 
-BLK="12" CHR="12" DIR="1A" EXE="2D" REG="93" HARDLINK="A2" SYMLINK="87" MISSING="3F" ORPHAN="A0" FIFO="D6" SOCK="CB" OTHER="C4"
-export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
-
-#export NNN_OPENER="nuke"
-export NNN_FIFO="/tmp/nnn.fifo"
-export NNN_TRASH=0
-
-export LC_COLLATE="C" # hidden files on top
-
-NNN_PLUG="d:dragdrop;"
-NNN_PLUG+="n:bulknew;"
-NNN_PLUG+="f:fzcd;"
-NNN_PLUG+="u:getplugs;"
-NNN_PLUG+="e:suedit;"
-NNN_PLUG+="v:rsynccp;"
-NNN_PLUG+="p:preview-tui;"
-#NNN_PLUG+="p:preview-tabbed;"
-export NNN_PLUG
-
-NNN_BMS="h:~/;"
-NNN_BMS+="d:~/Downloads;"
-NNN_BMS+="w:~/workshop;"
-NNN_BMS+="g:~/.config;"
-NNN_BMS+="s:/run/media/$USER/Storage;"
-NNN_BMS+="a:/run/media/$USER/Storage/shows;"
-NNN_BMS+="c:/run/media/$USER/Storage/codes;"
-NNN_BMS+="p:/run/media/$USER/Storage/ccc;"
-NNN_BMS+="m:/run/media/$USER/Storage/multimedia;"
-export NNN_BMS

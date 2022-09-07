@@ -1,18 +1,16 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
-
-# Mod1=<Alt> Mod4=<Super>
 set $mod Mod1
 
 # <default|stacking|tabbed>
 workspace_layout tabbed
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 2
+default_border none
 default_floating_border pixel 2
 
 # Hide borders
-#hide_edge_borders none
+hide_edge_borders smart
 
 # change borders
 bindsym $mod+g border toggle
@@ -30,10 +28,10 @@ bindsym $mod+t exec alacritty
 bindsym $mod+x kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id dmenu_recency
+bindsym $mod+d exec --no-startup-id rofi -show drun
 
 # launch categorized menu
-bindsym $mod+z exec --no-startup-id morc_menu
+bindsym $mod+Super_L exec --no-startup-id morc_menu
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
@@ -42,7 +40,7 @@ bindsym $mod+z exec --no-startup-id morc_menu
 #exec --no-startup-id volumeicon
 bindsym $mod+Ctrl+m exec --no-startup-id alacritty --title floating_term -e 'ncpamixer'
 for_window [title=floating_term] floating enable
-#floating_minimum_size 1000x600
+for_window [title=floating_term] floating_minimum_size 1300x700
 floating_maximum_size 1300x700
 #exec --no-startup-id pulseaudio
 #exec --no-startup-id pa-applet
@@ -57,19 +55,18 @@ floating_maximum_size 1300x700
 # Start Applications
 #bindsym $mod+Ctrl+b exec --no-startup-id alacritty --title floating_term -e 'bmenu'
 bindsym $mod+F1 exec brave
-bindsym $mod+F3 exec ranger
+bindsym $mod+F3 exec --title "Ranger" -e ranger
 #bindsym $mod+F3 exec pcmanfm
-bindsym $mod+c exec --no-startup-id alacritty --title floating_term -e cal -3
 #bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 bindsym $mod+F5 exec alacritty -e 'mocp'
-bindsym $mod+Shift+p exec --no-startup-id pkill picom
-bindsym $mod+Ctrl+p exec --no-startup-id picom --experimental-backends -b
+#bindsym $mod+Shift+p exec --no-startup-id pkill picom
+#bindsym $mod+Ctrl+p exec --no-startup-id picom --experimental-backends -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym Print exec --no-startup-id i3-scrot -w
-bindsym $mod+Print exec --no-startup-id i3-scrot -s
-bindsym $mod+Shift+Print exec --no-startup-id i3-scrot
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
-bindsym $mod+v exec --no-startup-id . /home/thermal/.config/automation/specialchar
+bindsym $mod+v exec --no-startup-id specialchar
+bindsym Print --release exec --no-startup-id ~/.config/rofi/applets/menu/screenshot.sh
+bindsym $mod+0 exec --no-startup-id ~/.config/rofi/powermenu/powermenu.sh
+bindsym $mod+u exec --no-startup-id ~/.config/rofi/applets/menu/my-apps.sh
 
 # mouse
 focus_follows_mouse no
@@ -113,7 +110,7 @@ bindsym $mod+f fullscreen toggle
 # stacked, tabbed, toggle split
 #bindsym $mod+s layout stacking
 bindsym $mod+p layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+s layout toggle split
 
 # fibonacci
 default_orientation horizontal
@@ -224,6 +221,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws7
 # Open applications on specific workspaces
 # assign [class="Thunderbird"] $ws1
 assign [title="Brave"] $ws1
+assign [title="Ranger"] $ws3
 assign [title="Steam"] $ws6
 assign [title="Discord"] $ws8
 assign [title="qBittorrent"] $ws9
@@ -272,21 +270,21 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Set shut down, restart and locking features
-bindsym $mod+0 mode "$mode_system"
-set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
-mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-    bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
-
-    # exit system mode: "Enter" or "Escape"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
+#bindsym $mod+0 mode "$mode_system"
+#set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+#mode "$mode_system" {
+#    bindsym l exec --no-startup-id i3exit lock, mode "default"
+#    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+#    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+#    bindsym e exec --no-startup-id i3exit logout, mode "default"
+#    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+#    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+#    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+#
+#    # exit system mode: "Enter" or "Escape"
+#    bindsym Return mode "default"
+#    bindsym Escape mode "default"
+#}
 
 bindsym $mod+r mode "resize"
 mode "resize" {
@@ -309,7 +307,6 @@ mode "resize" {
 # bindsym $mod+9 blurlock
 # Autostart applications
 exec --no-startup-id . ~/.config/autostart/startup
-exec --no-startup-id i3-msg 'workspace , exec alacritty -e ranger'; i3-msg 'workspace , exec alacritty'
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; picom --experimental-backends -b
 exec --no-startup-id nm-applet
@@ -323,6 +320,9 @@ exec --no-startup-id clipit
 exec --no-startup-id xautolock -time 30 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
+exec --no-startup-id i3-msg exec alacritty -t Ranger -e ranger'
+exec --no-startup-id i3-msg 'workspace , exec alacritty'
+exec --no-startup-id polybar main -r
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
@@ -355,55 +355,23 @@ set_from_resource $term_color13    color13
 set_from_resource $term_color14    color14
 set_from_resource $term_color15    color15
 
-# Start i3bar to display a workspace bar (plus the system information i3status if available)
-bar {
-    i3bar_command i3bar
-    status_command i3status
-    position top
-
-## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-#	tray_output primary
-#	tray_output eDP1
-
-    bindsym button4 nop
-    bindsym button5 nop
-#   font xft:URWGothic-Book 11
-    strip_workspace_numbers yes
-
-    colors {
-        background #111122
-        statusline #E0E0FF
-        separator  #666688
-
-#                          border  backgr. text
-        focused_workspace  #000000 #44ff88 #111122
-        active_workspace   #E0E0FF #222211 #E0E0FF
-        inactive_workspace #555050 #222211 #C0C0C0
-        binding_mode       #000000 #111122 #44ff88
-        urgent_workspace   #ffff33 #111122 #ffff33
-    }
-}
-
-# hide/unhide i3status bar
-bindsym $mod+m bar mode toggle
-
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-client.focused          #E0E0FF #E0E0FF #111122 #FDF6E3
-client.focused_inactive #555050 #555050 #C0C0C0 #454948
-client.unfocused        #555050 #2F3D44 #E0E0FF #454948
-client.urgent           #ffff33 #E0E0FF #E0E0FF #268BD2
+client.focused          #111122 #111122 #FFFF33 #44FF88
+client.focused_inactive #111122 #111122 #44FF88 #E0E0FF
+client.unfocused        #111122 #111122 #E0E0FF #E0E0FF
+client.urgent           #FF4488 #FF4488 #111122 #CC88FF
 client.placeholder      #000000 #0c0c0c #ffffff #000000
 
-client.background       #2B2C2B
+client.background       #111122 
 
 #############################
-### settings for i3-gaps: ###
+###        i3-gaps:       ###
 #############################
 
-# Set inner/outer gaps
-gaps inner 14
-gaps outer 20
+gaps inner 20
+gaps outer 10
+gaps top 0
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -411,43 +379,8 @@ gaps outer 20
 # gaps outer all plus 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-smart_gaps on
+# smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
-smart_borders on
-
-# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace)  or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
-set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod+Shift+w mode "$mode_gaps"
-
-mode "$mode_gaps" {
-        bindsym o      mode "$mode_gaps_outer"
-        bindsym i      mode "$mode_gaps_inner"
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
-        bindsym 0     gaps inner current set 0
-
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_outer" {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5 bindsym 0     gaps outer current set 0
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
+# smart_borders on

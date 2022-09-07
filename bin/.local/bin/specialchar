@@ -1,0 +1,6 @@
+#! /bin/bash
+
+choices="ç\né\nê\ná\nã\nõ"
+
+echo -e "$choices" | dmenu -i | tr -d '\n' | xclip -selection clipboard
+xdotool key ctrl+v

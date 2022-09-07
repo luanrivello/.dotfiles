@@ -160,3 +160,8 @@ map <C-n> :FloatermNew --height=0.9 --width=0.8 --name=nav --title=nav ranger<CR
 "set completeopt-=preview"
 "let g:ycm_show_diagnostics_ui = 0"
 
+if exists('g:vscode')
+    " VSCode extension
+else
+    " ordinary neovim
+endif

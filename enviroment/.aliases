@@ -2,10 +2,12 @@
 
 #MyAlias
 #Basic Operation
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias ll='ls -alFh'
+alias ..='cdls ..'
+alias ...='cdls ../..'
+alias ....='cdls ../../..'
+alias .....='cdls ../../../..'
+alias cd='cdls'
+alias ll='ls -glFh'
 alias la='ls -A'
 alias l='clear && ls -CFlh'
 alias mv='mv -v'
@@ -15,14 +17,15 @@ alias cls='clear && neofetch'
 
 #Basic Programms
 alias txt='devour mousepad'
-alias img='devour sxiv -faq'
+alias img='devour sxiv -aq'
 alias pdf='devour epdfview'
-alias play='devour mpv -fs'
+alias play='animeupdate'
 alias video='devour mpv -fs'
 alias listen='devour '
 alias nav='devour '
 alias edit='devour krita'
 alias www='devour brave'
+alias office='devour libreoffice'
 
 #Operations
 alias install='sudo pacman -S'
@@ -39,16 +42,12 @@ alias pontoautomatico='java -jar /mnt/Storage/programs/all/pontoAutomatico.jar'
 
 #Bookmarks
 alias storage='cd /mnt/Storage/'
-alias shows='cd /mnt/Storage/shows/'
+alias shows='cd /mnt/Storage/shows/ 2>&1 && ls | sed "s/ (.*$//" | sed "s/^\[.*\] //"'
 alias codes='cd /mnt/Storage/codes/'
 alias ccc='cd /mnt/Storage/ccc/'
 alias media='cd /mnt/Storage/multimedia/'
 alias workshop='cd $HOME/Desktop/'
 alias dotfiles='cd $HOME/.dotfiles/'
-
-#Kitty
-alias icat="kitty +kitten icat"
-alias kdiff="kitty +kitten diff"
 
 #Ambient
 alias v="nvim"

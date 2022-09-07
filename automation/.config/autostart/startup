@@ -1,28 +1,25 @@
 #! /bin/bash
 
-#audio
-MYHOME=/home/thermal
-~/.config/automation/soundin.auto &
-~/.config/automation/soundout.auto &
+##zsh config
+export ZDOTDIR=$HOME/.config/zsh
 
-#startup sound
-mpv --no-video ~/Interface/sound/ps1startup.mp4 &
+## for every file in automation
+for script in $HOME/.config/automation/*; do
+    echo $script
+    $script &
+done
 
-#screen
-~/.config/automation/redshell.sh &
-~/.config/automation/wallpaper.auto &
-
-#hardware
+##hardware
 openrgb -p off &
 
-#programs
+##programs
 qbittorrent &
 keepassxc &
-#steam &
 brave &
 notion-app-enhanced &
 lbry &
-
-sleep 5
+#steam &
 #discord &
+
+sleep 2
 exit 0
