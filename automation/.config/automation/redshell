@@ -5,7 +5,7 @@ h1="18:00"
 h2="06:00"
 
 bstart=0.9
-bend=0.2
+bend=0.3
 #bcurrent=0"$(echo "scale=2;$bstart -0.01" | bc)"
 bcurrent=$bstart
 btransitions="$(echo "scale=0;($bcurrent -$bend)*100/1" | bc)"
@@ -38,7 +38,7 @@ do
 done
 
 redstart=1:1:1
-redend=${temps[7]}
+redend=${temps[6]}
 redcurrent=$redend
 
 dateformat='+%G-%m-%d %H:%M'
