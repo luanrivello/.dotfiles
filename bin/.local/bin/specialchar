@@ -1,6 +1,11 @@
 #! /bin/bash
 
-choices="ç\né\nê\ná\nã\nõ"
+choices="ç\né\nê\ná\nã\nõ\nbomb"
 
-echo -e "$choices" | dmenu -i | tr -d '\n' | xclip -selection clipboard
+echo -e $choices | dmenu -i | tr -d '\n' | xclip -selection clipboard
+#echo -e $choices | dmenu -i
+
+#cat /mnt/Storage/codes/shell/bomb/aux3 | xclip -selection clipboard
+
 xdotool key ctrl+v
+

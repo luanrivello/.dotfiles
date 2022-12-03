@@ -5,7 +5,7 @@ h1="18:00"
 h2="06:00"
 
 bstart=0.9
-bend=0.3
+bend=0.33
 #bcurrent=0"$(echo "scale=2;$bstart -0.01" | bc)"
 bcurrent=$bstart
 btransitions="$(echo "scale=0;($bcurrent -$bend)*100/1" | bc)"
@@ -16,7 +16,8 @@ echo $bcurrent
 #4 - 2500K #5 - 3000K #6 - 3500K
 #7 - 4000K #8 - 4500K #9 - 5000K
 #10- 5500K #11- 6000K #12- 6500K
-temps=("1:0.54:0.42" \
+temps=( \
+       "1:0.54:0.42" \
        "1.00000000:0.18172716:0.00000001" \
        "1.00000000:0.42322816:0.00000001" \
        "1.00000000:0.54360078:0.08679949" \
@@ -38,7 +39,7 @@ do
 done
 
 redstart=1:1:1
-redend=${temps[6]}
+redend=${temps[7]}
 redcurrent=$redend
 
 dateformat='+%G-%m-%d %H:%M'
@@ -157,13 +158,11 @@ do
         _adjust "$bstart" "$redstart"
 
         waitingtime=$(($(date +%s -d "$transition") - $(date +%s -d "$currenttime")))
-
-        if [[ $waitingtime > 0 ]];
+        if [[ $waitingtime -gt 0 ]];
         then
             echo waiting $(($waitingtime/60)) minutes...
             sleep $waitingtime
         fi
-
 
     else
         sleep 360

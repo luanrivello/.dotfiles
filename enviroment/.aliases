@@ -14,6 +14,7 @@ alias mv='mv -v'
 alias cp='cp -v'
 alias rm='rm -Iv'
 alias cls='clear && neofetch'
+#snap='ls -R /* | sed -n "p;N;" | xargs rm -r'
 
 #Basic Programms
 alias txt='devour mousepad'
@@ -26,6 +27,7 @@ alias nav='devour '
 alias edit='devour krita'
 alias www='devour brave'
 alias office='devour libreoffice'
+alias print='lpstat -p -d'
 
 #Operations
 alias install='sudo pacman -S'
@@ -39,15 +41,18 @@ alias umysite='sudo rsync -vr --delete-during --exclude '.git/' --exclude '.vsco
 alias brired='xrandr --output DisplayPort-0 --brightness 0.3 && xrandr --output HDMI-A-0 --brightness 0.3'
 alias brires='xrandr --output DisplayPort-0 --brightness 0.9 && xrandr --output HDMI-A-0 --brightness 0.9'
 alias pontoautomatico='java -jar /mnt/Storage/programs/all/pontoAutomatico.jar'
+alias dk='sudo docker'
 
 #Bookmarks
 alias storage='cd /mnt/Storage/'
-alias shows='cd /mnt/Storage/shows/ 2>&1 && ls | sed "s/ (.*$//" | sed "s/^\[.*\] //"'
+alias shows='cd /mnt/Storage/shows/ 2>&1 && ls | sed "s/ (.*$//" | sed "s/^\[.*\] //" | sed "s/ S\([0-9]\) -/ \1 -/"'
 alias codes='cd /mnt/Storage/codes/'
 alias ccc='cd /mnt/Storage/ccc/'
 alias media='cd /mnt/Storage/multimedia/'
 alias workshop='cd $HOME/Desktop/'
 alias dotfiles='cd $HOME/.dotfiles/'
+alias babel='cd /mnt/Storage/babel'
+alias music='cd /mnt/Storage/babel/music'
 
 #Ambient
 alias v="nvim"

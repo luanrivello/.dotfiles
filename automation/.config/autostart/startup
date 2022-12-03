@@ -9,17 +9,25 @@ for script in $HOME/.config/automation/*; do
     $script &
 done
 
-##hardware
-openrgb -p off &
+#nitrogen --restore
+#sleep 1
+#picom --experimental-backends -b
+#clipit
+#polybar main -r
+#xautolock -time 30 -locker blurlock
 
 ##programs
 qbittorrent &
 keepassxc &
 brave &
 notion-app-enhanced &
-lbry &
+#lbry &
 #steam &
 #discord &
 
-sleep 2
+sleep 3
+
+##hardware
+openrgb -p off &
+
 exit 0
