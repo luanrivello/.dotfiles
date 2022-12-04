@@ -45,7 +45,8 @@ alias dk='sudo docker'
 
 #Bookmarks
 alias storage='cd /mnt/Storage/'
-alias shows='cd /mnt/Storage/shows/ 2>&1 && ls | sed "s/ (.*$//" | sed "s/^\[.*\] //" | sed "s/ S\([0-9]\) -/ \1 -/"'
+#alias shows='cd /mnt/Storage/shows/ 2>&1 && ls | sed "s/ (.*$//" | sed "s/^\[.*\] //" | sed "s/ S\([0-9]\) -/ \1 -/"i'
+alias shows='cd /mnt/Storage/shows/ && clear && colapse'
 alias codes='cd /mnt/Storage/codes/'
 alias ccc='cd /mnt/Storage/ccc/'
 alias media='cd /mnt/Storage/multimedia/'
