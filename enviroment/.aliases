@@ -30,10 +30,18 @@ alias office='devour libreoffice'
 alias print='lpstat -p -d'
 
 #Operations
+##Arch
 alias install='sudo pacman -S'
 alias remove='sudo pacman -Rsu'
 alias update='sudo pacman -Syu'
 alias search='sudo pacman -Ss'
+##Nix
+#alias rebuild="sudo nixos-rebuild switch"
+#alias install="nix-env -i"
+#alias envls="nix-env -q"
+#alias remove="nix-env --remove"
+#alias update="sudo nix-channel --update && sudo nixos-rebuild switch --upgrade"
+#Etc
 alias indot='stow '
 alias undot='stow -D '
 alias redot='stow -R '
