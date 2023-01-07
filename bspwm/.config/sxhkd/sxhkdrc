@@ -39,7 +39,7 @@ alt + g
 	bspc node -s biggest.window
 
 #
-# state/flags
+# state/flags 
 #
 
 # set the window state
