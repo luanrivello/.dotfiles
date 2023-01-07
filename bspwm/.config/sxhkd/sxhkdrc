@@ -39,7 +39,7 @@ alt + g
 	bspc node -s biggest.window
 
 #
-# state/flags 
+# state/flags
 #
 
 # set the window state
@@ -63,12 +63,15 @@ alt + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous window in the current desktop
-alt + {_,shift + }c
+alt + {_,shift + }n
 	bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
 alt + bracket{left,right}
 	bspc desktop -f {prev,next}.local
+
+#alt + {shift + Tab, Tab}
+#	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
 alt + {grave,Tab}
@@ -97,11 +100,11 @@ alt + ctrl + {1-9}
 	bspc node -o 0.{1-9}
 
 # cancel the preselection for the focused node
-alt + ctrl + Return
+alt + ctrl + space
 	bspc node -p cancel
 
 # cancel the preselection for the focused desktop
-alt + ctrl + shift + Return
+alt + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 #
