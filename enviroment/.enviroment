@@ -23,14 +23,21 @@ export XDG_VIDEOS_DIR="$HOME/Videos"
 # Standard
 export EDITOR="nvim"
 export VISUAL="nvim"
+export SUDO_EDITOR="nvim"
 #export BROWSER="librewolf"
 export IMAGE="devour sxiv -f"
 export VIDEO="devour mpv -f"
+#export READER=""
+export TERMINAL="alacritty"
+export COLORTERM="truecolor"
 #export PAGER="most -s"
 export PAGER="less -SR"
 export PRINTER="HP_Smart_Tank_510_series_39F406"
 #export MANPAGER="nvimpager"
 #export MOST_INITFILE="~/.most.rc"
+export OPENER="xdg-open"
+export BROWSER="brave"
+#export WM="brave"
 
 # Vim
 set -o vi

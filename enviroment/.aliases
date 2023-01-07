@@ -36,7 +36,7 @@ alias remove='sudo pacman -Rsu'
 alias update='sudo pacman -Syu'
 alias search='sudo pacman -Ss'
 ##Nix
-#alias rebuild="sudo nixos-rebuild switch"
+#alias rebuild="sudo nixos-rebuild switch && shutdown -r now"
 #alias install="nix-env -i"
 #alias envls="nix-env -q"
 #alias remove="nix-env --remove"

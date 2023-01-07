@@ -229,7 +229,11 @@ colors:
       foreground: '#44ff88'
       background: '#111122'
 
-    bar:
+    #depecrated
+    #bar:
+      #foreground: '#44ff88'
+      #background: '#000000'
+  footer_bar:
       foreground: '#44ff88'
       background: '#000000'
 
