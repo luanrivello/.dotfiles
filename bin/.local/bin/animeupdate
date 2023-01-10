@@ -45,11 +45,14 @@ resp=$(curl -s 'https://myanimelist.net/ownlist/anime/edit.json' \
             --compressed
       )
 
-[ "$resp" != "null" ] && echo $resp && echo "Falha ao atualizar ep" && exit 1
-
-echo "Sucesso"
+echo ""
 echo "ID      : "$id
 echo "Anime   : "$1
 echo "Episodio: "$2
+echo ""
+
+[ "$resp" != "null" ] && echo $resp && echo "*Falha ao atualizar episodio*" && exit 1
+
+echo "*Atualizado com Sucesso*"
 
 exit 0
