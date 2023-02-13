@@ -5,7 +5,7 @@ h1="18:00"
 h2="06:00"
 
 bstart=0.9
-bend=0.33
+bend=0.25
 #bcurrent=0"$(echo "scale=2;$bstart -0.01" | bc)"
 bcurrent=$bstart
 btransitions="$(echo "scale=0;($bcurrent -$bend)*100/1" | bc)"

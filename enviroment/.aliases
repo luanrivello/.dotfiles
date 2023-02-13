@@ -27,7 +27,7 @@ alias nav='devour '
 alias edit='devour krita'
 alias www='devour brave'
 alias office='devour libreoffice'
-alias print='lpstat -p -d'
+alias print='lp -d'
 
 #Operations
 ##Arch

@@ -1,12 +1,29 @@
 #! /bin/bash
+base=$(printf '\033[0;032m') 
+numbers=$(printf '\033[0;034m') 
+mark=$(printf '\033[0;031m') 
 
+#result=$(\
 ls -p | grep -v / |
 sed "s/ (.*$//" | 
 sed "s/^\[.*\] //" | 
 sed "s/ S\([0-9]\) -/ \1 -/"i | 
 awk '
-{idx=""; for(j=1;j<NF;j++) idx=idx" "$j}
-{a[idx]=(idx in a)?a[idx]"\033[32m,"$NF:"\033[32m"$NF}
-{a[idx]=a[idx]"\033[34m"}
-END{for(i in a) print i,a[i]}
+{
+    idx=""; 
+    for(j=1;j<NF;j++) idx=idx" "$j
+}
+{
+    a[idx]=(idx in a)?a[idx]"'$base',"$NF:"'$base'"$NF
+}
+{
+    a[idx]=a[idx]"'$numbers'"
+}
+END{
+    for(i in a) print i,a[i]
+}
 '
+#)
+
+#echo $result #| sed "s/02/${mark}02/"
+

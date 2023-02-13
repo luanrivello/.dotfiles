@@ -1,0 +1,92 @@
+#!/bin/bash
+
+#animeupdate () {
+#	devour mpv -fs "$@" && if [[ $(basename "$PWD") == "shows" ]]
+#	then
+#		title=$(echo $@ | sed "s/ (.*$//" | sed "s/^\[.*\] //" | sed 's/\<0//g' | sed "s/ S\([0-9]\) -/ \1 -/")
+#		anime=$(echo $title | awk -F "-" '{NF--; print}' | sed 's/-//g' | sed 's/[ \t]*$//g')
+#		ep=$(echo $title | awk -F "-" '{print $NF}' | sed 's/ //g')
+#		echo "\nUpdating Anime List..."
+#		animelist $anime $ep
+#	fi
+#}
+
+cookie='cookie: '
+token=''
+
+[[ $# -ne 2 ]] && echo "animeupdate \"Nome Do Anime\" Ep " && exit 1
+
+# Formatar Nome para enviar na url
+fmt=$(echo $1 | sed -e "s/ /%20/g")
+
+# MAL
+# Search Id
+response=$(curl -s 'https://myanimelist.net/search/prefix.json?type=all&keyword='$fmt'&v=1' \
+                -H 'authority: myanimelist.net' \
+                -H 'accept: application/json, text/javascript, */*; q=0.01' \
+                -H 'accept-language: en-US,en;q=0.6' \
+                -H 'referer: https://myanimelist.net/' \
+                -H 'sec-fetch-dest: empty' \
+                -H 'sec-fetch-mode: cors' \
+                -H 'sec-fetch-site: same-origin' \
+                -H 'sec-gpc: 1' \
+                -H 'x-requested-with: XMLHttpRequest' \
+                --compressed
+          )
+
+# Response List 
+list=$(echo $response \
+    | grep -Po '"id":.*?[^\\]",.*?[^\\]",' \
+    | sed -e "s/\"type\":\"anime\",//g" \
+    | awk -F "\"id\":" '{print $2 ";" $3}' \
+    | sed -e "s/\"name\":\"//g" \
+    | sed -e "s/\",//g" 
+)
+
+# Season
+num=$(echo $1 | sed 's@^[^0-9]*\([0-9]\+\).*@\1@')
+
+# Search Season
+for i in $(seq 1 5); do
+    aux=$(echo $list | awk -F ";" "{print \$$i}")
+    name=$(echo $aux | awk -F "," '{$1=""; print $0}')
+
+    if [[ $name == *$num* ]]; then
+        id=$(echo $aux | awk -F "," '{print $1}')
+        echo $name
+        echo $id
+        break;
+    fi
+    
+done
+
+
+# Update Episode
+resp=$(curl -s 'https://myanimelist.net/ownlist/anime/edit.json' \
+            -H 'authority: myanimelist.net' \
+            -H 'accept: */*' \
+            -H 'accept-language: en-US,en;q=0.6' \
+            -H 'content-type: application/x-www-form-urlencoded; charset=UTF-8' \
+            -H 'cookie: ' \
+            -H 'origin: https://myanimelist.net' \
+            -H 'referer: https://myanimelist.net' \
+            -H 'sec-fetch-dest: empty' \
+            -H 'sec-fetch-mode: cors' \
+            -H 'sec-fetch-site: same-origin' \
+            -H 'sec-gpc: 1' \
+            -H 'x-requested-with: XMLHttpRequest' \
+            --data-raw '{"num_watched_episodes":'$2',"anime_id":'$id',"status":1,"csrf_token":"'$token'"}' \
+            --compressed
+      )
+
+echo ""
+echo "ID      : "$id
+echo "Anime   : "$1
+echo "Episodio: "$2
+echo ""
+
+[ "$resp" != "null" ] && echo $resp && echo "-- Falha ao atualizar ep --" && exit 1
+
+echo "-- Atualizado com Sucesso --"
+
+exit 0
