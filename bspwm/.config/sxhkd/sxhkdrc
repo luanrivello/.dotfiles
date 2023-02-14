@@ -67,15 +67,15 @@ alt + {_,shift + }n
 	bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
-alt + bracket{left,right}
+#alt + bracket{left,right}
+    #bspc desktop -f {prev,next}.local
+
+alt + {shift + Tab, Tab}
 	bspc desktop -f {prev,next}.local
 
-#alt + {shift + Tab, Tab}
-#	bspc desktop -f {prev,next}.local
-
 # focus the last node/desktop
-alt + {grave,Tab}
-	bspc {node,desktop} -f last
+#alt + {grave,Tab}
+	#bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
 alt + {o,i}
@@ -84,7 +84,7 @@ alt + {o,i}
 	bspc wm -h on
 
 # focus or send to the given desktop
-super + {_,shift + }{1-9,0}
+alt + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
 #

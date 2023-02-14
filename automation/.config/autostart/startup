@@ -12,9 +12,10 @@ done
 #nitrogen --restore
 #sleep 1
 #picom --experimental-backends -b
+picom -b
 #clipit
 #polybar main -r
-#xautolock -time 30 -locker blurlock
+xautolock -time 30 -locker blurlock
 
 ##programs
 qbittorrent &
