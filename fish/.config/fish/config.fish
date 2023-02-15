@@ -1,2 +1,3 @@
-source $HOME/.aliases
+import_bash_aliases
+fish_vi_key_bindings
 neofetch
