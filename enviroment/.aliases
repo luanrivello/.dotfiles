@@ -36,11 +36,11 @@ alias remove='sudo pacman -Rsu'
 alias update='sudo pacman -Syu'
 alias search='sudo pacman -Ss'
 ##Nix
-#alias rebuild="sudo nixos-rebuild switch && shutdown -r now"
-#alias install="nix-env -i"
-#alias envls="nix-env -q"
-#alias remove="nix-env --remove"
 #alias update="sudo nix-channel --update && sudo nixos-rebuild switch --upgrade"
+#alias rebuild="sudo nixos-rebuild switch && shutdown -r now"
+#alias envls="nix-env -q"
+#alias install="nix-env -i"
+#alias remove="nix-env --remove"
 #Etc
 alias commit='git add . && git commit -m'
 alias indot='stow '
