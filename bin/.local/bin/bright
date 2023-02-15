@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #0 - custom
 #1 - 1000K #2 - 1500K #3 - 2000K

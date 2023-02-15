@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #sleep 10 && glava --force-mod=radial --desktop
 #sleep 10 && glava --force-mod=graph --desktop &

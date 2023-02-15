@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
 choices="ç\né\nê\ná\nã\nõ\nbomb"
 

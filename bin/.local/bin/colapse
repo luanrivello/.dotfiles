@@ -1,4 +1,5 @@
-#! /bin/bash
+#!/usr/bin/env bash
+
 base=$(printf '\033[0;032m') 
 numbers=$(printf '\033[0;034m') 
 mark=$(printf '\033[0;031m') 

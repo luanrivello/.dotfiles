@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
 ##zsh config
 export ZDOTDIR=$HOME/.config/zsh
