@@ -35,7 +35,8 @@ alias install='sudo pacman -S'
 alias remove='sudo pacman -Rsu'
 alias update='sudo pacman -Syu'
 alias search='sudo pacman -Ss'
-##Nix
+##Nixos
+#alias nixos="cd /etc/nixos/"
 #alias update="sudo nix-channel --update && sudo nixos-rebuild switch --upgrade"
 #alias rebuild="sudo nixos-rebuild switch && shutdown -r now"
 #alias envls="nix-env -q"
