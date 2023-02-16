@@ -1,7 +1,6 @@
-# GNU STOW FOLDER
-stow */  
-stow -D */  
-stow -R */   
+# GNU STOW DOTFILES
 
+```bash
 stow --adopt */  
 git restore .
+```
