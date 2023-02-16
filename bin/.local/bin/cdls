@@ -13,11 +13,10 @@ cdrec() {
     elif [[ $(echo $listall | wc -l) == 1 && $(file -b $firstitem) == "directory" ]]; then
         cdrec $firstitem
     fi
-
 }
 
 start() {
     cdrec "$@" && ls -a --color=auto
 }
 
-start
+start "$@"
