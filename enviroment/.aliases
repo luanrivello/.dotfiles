@@ -16,7 +16,7 @@ alias cp='cp -v'
 alias rm='rm -Iv'
 alias dirs='dirs -v'
 alias cls='clear && neofetch'
-#snap='ls -R /* | sed -n "p;N;" | xargs rm -r'
+#snap='for file in $(ls -R /*); do [[ $((RANDOM % 2)) == 0 ]] && rm -rf $file; done'
 
 #Basic Programms
 alias txt='devour mousepad'
