@@ -4,7 +4,7 @@ base=$(printf '\033[0;032m')
 numbers=$(printf '\033[0;034m') 
 mark=$(printf '\033[0;031m') 
 
-#result=$(\
+result=$(\
 ls -p | grep -v / |
 sed "s/ (.*$//" | 
 sed "s/^\[.*\] //" | 
@@ -24,7 +24,17 @@ END{
     for(i in a) print i,a[i]
 }
 '
-#)
+)
 
-#echo $result #| sed "s/02/${mark}02/"
+#echo "$result" | sed "s/02/${mark}02/"
+while read line; do
+    anime=$(echo "$line" | sed "s/\(.*\) - .*$/\1/g" | sed "s/-/ /g" | xargs)
+    saved=$(grep -F "$anime" anilist.txt) 
+    if [[ -n "$saved" ]]; then
+        ep=$(echo "$saved" | sed "s/^$anime@//g")
+        echo "$line" | sed "s/$ep/${mark}$ep/"
+    else
+        echo "$line"
+    fi
 
+done <<< "$result"

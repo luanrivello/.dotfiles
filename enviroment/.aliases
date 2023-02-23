@@ -14,6 +14,7 @@ alias l='clear && ls -CFlh'
 alias mv='mv -v'
 alias cp='cp -v'
 alias rm='rm -Iv'
+alias dirs='dirs -v'
 alias cls='clear && neofetch'
 #snap='ls -R /* | sed -n "p;N;" | xargs rm -r'
 
