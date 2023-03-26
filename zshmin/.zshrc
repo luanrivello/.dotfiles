@@ -1,31 +1,41 @@
 #!/bin/sh
-[ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 
+ZDOTDIR=$HOME/.config/zsh
+HISTFILE=$HOME/.config/zsh/.zsh_history
 
-# history
-HISTFILE=~/.zsh_history
+# Plugin Zap
+# zap update && zap clean
+[ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh" \
+|| zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh)
 
 # source
-plug "$HOME/.config/zsh/aliases.zsh"
-plug "$HOME/.config/zsh/exports.zsh"
 
-# plugins
-plug "esc/conda-zsh-completion"
-plug "zsh-users/zsh-autosuggestions"
-plug "hlissner/zsh-autopair"
-plug "zap-zsh/supercharge"
+#plug "zap-zsh/fzf"
+#plug "zap-zsh/zap-prompt" #change prompt
+
+plug "spaceship-prompt/spaceship-prompt"
+plug "spaceship-prompt/spaceship-vi-mode"
+plug "$HOME/.config/zsh/spaceship.zsh"
+
+#plug "zap-zsh/supercharge"
+#plug "zap-zsh/exa"
 plug "zap-zsh/vim"
-plug "zap-zsh/zap-prompt"
-plug "zap-zsh/fzf"
-plug "zap-zsh/exa"
+plug "hlissner/zsh-autopair"
 plug "zsh-users/zsh-syntax-highlighting"
+plug "zsh-users/zsh-autosuggestions"
+
+plug "$HOME/.config/zsh/.zshenv"
+plug "$HOME/.enviroment"
+plug "$HOME/.aliases"
 
 # keybinds
-bindkey '^ ' autosuggest-accept
+#bindkey '^ ' autosuggest-accept
 
-export PATH="$HOME/.local/bin":$PATH
+#Completion
+# load + start compinit
+autoload -U compinit && compinit
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
 
-if command -v bat &> /dev/null; then
-  alias cat="bat -pp --theme \"Visual Studio Dark+\"" 
-  alias catt="bat --theme \"Visual Studio Dark+\"" 
-fi
+eval spaceship_vi_mode_enable
+
+cls
