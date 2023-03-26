@@ -16,7 +16,7 @@ hide_edge_borders smart
 bindsym $mod+g border toggle
 
 # font
-font xft:cascadia 12
+font xft:cascadia code 12
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -322,7 +322,7 @@ exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id i3-msg 'exec alacritty -t Ranger -e ranger'
 exec --no-startup-id i3-msg 'workspace , exec alacritty'
-exec --no-startup-id i3-msg 'exec alacritty'
+#exec --no-startup-id i3-msg 'exec alacritty'
 exec --no-startup-id polybar main -r
 
 # Color palette used for the terminal ( ~/.Xresources file )
