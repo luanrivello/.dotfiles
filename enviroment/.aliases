@@ -29,7 +29,7 @@ alias nav='devour '
 alias edit='devour krita'
 alias www='devour brave'
 alias office='devour libreoffice'
-alias print='lp'
+alias print='lp -d HP_Smart_Tank_510_series_39F406'
 
 #Operations
 ##Arch
