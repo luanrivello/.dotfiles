@@ -23,7 +23,7 @@ animeupdate() {
 cdrec() {
     cd "$@" && \
 
-    listall=$(ls -1A) && \
+    listall=$(command ls -1A) && \
     firstitem=$(echo $listall | sed -n 1p) && \
 
     # if there is nothing inside or if you are trying to go back the directories then dont run
@@ -33,10 +33,9 @@ cdrec() {
     elif [[ $(echo $listall | wc -l) == 1 && $(file -b $firstitem) == "directory" ]]; then
         cdrec $firstitem
     fi
-
 }
 
 cdls() {
-    cdrec "$@" && ls -a --color=auto
+    cdrec "$@" && ls -A --color=auto
 }
 #End My Functions
