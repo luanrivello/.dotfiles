@@ -15,11 +15,12 @@ alias lt='exa --icons -TL 1'
 alias mv='mv -v'
 alias cp='cp -v'
 alias rm='rm -Iv'
-alias dirs='dirs -v'
 alias cat='bat'
-alias grep='ripgrep'
+alias get='rg --hidden -i'
 alias find='fd'
+alias scan='rga'
 alias tree='exa -T'
+alias fonts='fc-list : family'
 alias disk='ncdu'
 alias cls='clear && neofetch'
 #snap='for file in $(ls -R /*); do [[ $((RANDOM % 2)) == 0 ]] && rm -rf $file; done'
@@ -44,10 +45,10 @@ alias remove='sudo pacman -Rsu'
 alias update='sudo pacman -Syu'
 alias search='sudo pacman -Ss'
 ##Nixos
-#alias nixos="cd /etc/nixos/"
-#alias update="sudo nix-channel --update && sudo nixos-rebuild switch --upgrade"
-#alias rebuild="sudo nixos-rebuild switch && shutdown -r now"
-#alias envls="nix-env -q"
+alias nixos="cd /etc/nixos/"
+alias update="sudo nix-channel --update && sudo nixos-rebuild switch --upgrade"
+alias rebuild="sudo nixos-rebuild switch && shutdown -r now"
+alias envls="nix-env -q"
 #alias install="nix-env -i"
 #alias remove="nix-env --remove"
 #Etc
