@@ -4,6 +4,7 @@ syntax on
 set nu
 set relativenumber
 set nowrap
+set clipboard=unnamedplus
 "set wrap linebreak"
 set showmatch
 set mouse=a
