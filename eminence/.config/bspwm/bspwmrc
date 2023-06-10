@@ -2,6 +2,7 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 polybar &
+feh --bg-fill $HOME/Interface/wallpapers/default.png &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 #bspc monitor HDMI-A-0 -d I II III IV V
