@@ -11,7 +11,7 @@ export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SO
 export NNN_FIFO="/tmp/nnn.fifo"
 export NNN_TRASH=0
 export NNN_TMPFILE="/tmp/.lastd" #cd on quit
-export NNN_LOCKER="cmatrix" #cd on quit
+export NNN_LOCKER='neo -sac yellow --charset=braille -d0,5 -G5 -b2' 
 
 export LC_COLLATE="C" # hidden files on top
 
