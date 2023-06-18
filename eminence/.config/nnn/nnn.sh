@@ -1,15 +1,17 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # NNN config
-export NNN_OPTS="ax"
+export NNN_OPTS="EUiSQ"
 
-export NNN_COLORS="#E2E2E2E2"
+export NNN_COLORS="#E2E2E2E2;3333"
 BLK="3E" CHR="A7" DIR="DC" EXE="E2" REG="FF" HARDLINK="3E" SYMLINK="2D" MISSING="A0" ORPHAN="A0" FIFO="E3" SOCK="3E" OTHER="FF"
 export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
 
 #export NNN_OPENER="nuke"
 export NNN_FIFO="/tmp/nnn.fifo"
 export NNN_TRASH=0
+export NNN_TMPFILE="/tmp/.lastd" #cd on quit
+export NNN_LOCKER="cmatrix" #cd on quit
 
 export LC_COLLATE="C" # hidden files on top
 
