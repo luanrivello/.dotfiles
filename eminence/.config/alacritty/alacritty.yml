@@ -286,9 +286,9 @@ colors:
     green:   '#FFD700'
     yellow:  '#EE5555'
     blue:    '#FFAF00'
-    magenta: '#5F5FFF'
-    cyan:    '#00CCEE'
-    white:   '#DFDFDF'
+    magenta: '#00CCEE'
+    cyan:    '#FFFFFF'
+    white:   '#FFFFFF'
 
   # Bright colors
   bright:
@@ -297,9 +297,9 @@ colors:
     green:   '#FFD700'
     yellow:  '#EE5555'
     blue:    '#FFAF00'
-    magenta: '#5F5FFF'
-    cyan:    '#00CCEE'
-    white:   '#DFDFDF'
+    magenta: '#00CCEE'
+    cyan:    '#FFFFFF'
+    white:   '#FFFFFF'
 
   # Dim colors
   #
