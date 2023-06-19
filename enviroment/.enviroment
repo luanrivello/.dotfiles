@@ -1,9 +1,9 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
-#zsh path
+# zsh path
 export ZDOTDIR=$HOME/.config/zsh
 
-#most path
+# Most path
 export MOST_INITFILE=$HOME/.config/most.rc
 
 # XDG Guidelines
@@ -19,7 +19,7 @@ export XDG_PUBLICSHARE_DIR="$HOME/Public"
 export XDG_TEMPLATES_DIR="$HOME/Templates"
 export XDG_VIDEOS_DIR="$HOME/Videos"
 
-# Standard
+# Default
 export EDITOR="nvim"
 export VISUAL="nvim"
 export SUDO_EDITOR="nvim"
@@ -33,7 +33,6 @@ export COLORTERM="truecolor"
 export PAGER="less -SR"
 export PRINTER="HP_Smart_Tank_510_series_39F406"
 #export MANPAGER="nvimpager"
-#export MOST_INITFILE="~/.most.rc"
 export OPENER="xdg-open"
 export BROWSER="brave"
 #export WM="brave"
@@ -52,37 +51,3 @@ export PATH="$PATH:$JAVA_HOME/bin"
 # Go
 export GOPATH="/run/media/$USER/Storage/codes/go"
 export PATH="$PATH:/run/media/$USER/Storage/codes/go/bin"
-
-# NNN config
-#export NNN_OPTS="aexHSQ"
-#
-#BLK="12" CHR="12" DIR="1A" EXE="2D" REG="93" HARDLINK="A2" SYMLINK="87" MISSING="3F" ORPHAN="A0" FIFO="D6" SOCK="CB" OTHER="C4"
-#export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
-#
-##export NNN_OPENER="nuke"
-#export NNN_FIFO="/tmp/nnn.fifo"
-#export NNN_TRASH=0
-#
-#export LC_COLLATE="C" # hidden files on top
-#
-#NNN_PLUG="d:dragdrop;"
-#NNN_PLUG+="n:bulknew;"
-#NNN_PLUG+="f:fzcd;"
-#NNN_PLUG+="u:getplugs;"
-#NNN_PLUG+="e:suedit;"
-#NNN_PLUG+="v:rsynccp;"
-#NNN_PLUG+="p:preview-tui;"
-##NNN_PLUG+="p:preview-tabbed;"
-#export NNN_PLUG
-#
-#NNN_BMS="h:~/;"
-#NNN_BMS+="d:~/Downloads;"
-#NNN_BMS+="w:~/workshop;"
-#NNN_BMS+="g:~/.config;"
-#NNN_BMS+="s:/run/media/$USER/Storage;"
-#NNN_BMS+="a:/run/media/$USER/Storage/shows;"
-#NNN_BMS+="c:/run/media/$USER/Storage/codes;"
-#NNN_BMS+="p:/run/media/$USER/Storage/ccc;"
-#NNN_BMS+="m:/run/media/$USER/Storage/multimedia;"
-#export NNN_BMS
-
