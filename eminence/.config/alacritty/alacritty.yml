@@ -283,7 +283,7 @@ colors:
   normal:
     black:   '#000000'
     green:   '#FFD700'
-    red:     '#FF3D74'
+    red:     '#DA65EE'
     yellow:  '#EE5555'
     blue:    '#FFAF00'
     magenta: '#00CCEE'
@@ -293,7 +293,7 @@ colors:
   # Bright colors
   bright:
     black:   '#000000'
-    red:     '#FF3D74'
+    red:     '#DA65EE'
     green:   '#FFD700'
     yellow:  '#EE5555'
     blue:    '#FFAF00'
