@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # zsh path
-export ZDOTDIR=$HOME/.config/zsh
+#export ZDOTDIR=$HOME/.config/zsh
 
 # Most path
 export MOST_INITFILE=$HOME/.config/most.rc
@@ -30,9 +30,11 @@ export VIDEO="devour mpv --fs"
 export TERMINAL="alacritty"
 export COLORTERM="truecolor"
 #export PAGER="most -s"
+#export PAGER="less -SR"
 export PAGER="less -SR"
 export PRINTER="HP_Smart_Tank_510_series_39F406"
 #export MANPAGER="nvimpager"
+#export MANPAGER="nvim +man!"
 export OPENER="xdg-open"
 export BROWSER="brave"
 #export WM="brave"
