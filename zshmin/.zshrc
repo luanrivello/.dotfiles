@@ -1,7 +1,9 @@
-#!/bin/sh
+#!/bin/usr/env sh
 
 ZDOTDIR=$HOME/.config/zsh
 HISTFILE=$HOME/.config/zsh/.zsh_history
+HISTSIZE=1000000
+SAVEHIST=1000000
 
 # Plugin Zap
 # zap update && zap clean
@@ -11,14 +13,10 @@ HISTFILE=$HOME/.config/zsh/.zsh_history
 # source
 
 #plug "zap-zsh/fzf"
-#plug "zap-zsh/zap-prompt" #change prompt
-
 plug "spaceship-prompt/spaceship-prompt"
 plug "spaceship-prompt/spaceship-vi-mode"
 plug "$HOME/.config/zsh/spaceship.zsh"
 
-#plug "zap-zsh/supercharge"
-#plug "zap-zsh/exa"
 plug "zap-zsh/vim"
 plug "hlissner/zsh-autopair"
 plug "zsh-users/zsh-syntax-highlighting"

@@ -36,7 +36,7 @@ cdrec() {
 }
 
 cdls() {
-    cdrec "$@" && ls -A --color=auto
+    cdrec "$@" && exa -a --icons
 }
 #End My Functions
 
