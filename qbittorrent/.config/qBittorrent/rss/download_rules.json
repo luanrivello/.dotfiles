@@ -1,0 +1,21 @@
+{
+    "temporada": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "https://subsplease.org/rss/?r=720"
+        ],
+        "assignedCategory": "anime",
+        "enabled": true,
+        "episodeFilter": "",
+        "ignoreDays": 0,
+        "lastMatch": "23 Jun 2023 18:46:05 +0000",
+        "mustContain": " spy | Fumetsu no fumetsu | Kyokou Suiri | Nagatoro | Orchestra | Stone | Kono Subarashii | Mahoutsukai | Oshi no Ko | Dead Mount Death Play\n| Magical Destroyers",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "/mnt/Storage/shows",
+        "smartFilter": true,
+        "torrentContentLayout": null,
+        "useRegex": false
+    }
+}
