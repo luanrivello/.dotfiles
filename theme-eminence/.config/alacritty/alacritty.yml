@@ -282,7 +282,7 @@ colors:
   # Normal colors
   normal:
     black:   '#000000'
-    green:   '#EECC44'
+    green:   '#EBC033'
     red:     '#DC0B0B'
     yellow:  '#EE5555'
     blue:    '#FFAF00'
@@ -294,7 +294,7 @@ colors:
   bright:
     black:   '#000000'
     red:     '#DC0B0B'
-    green:   '#EECC44'
+    green:   '#EBC033'
     yellow:  '#EE5555'
     blue:    '#FFAF00'
     cyan:    '#FFFFFF'
