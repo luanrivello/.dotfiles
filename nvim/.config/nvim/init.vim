@@ -12,8 +12,8 @@ set confirm
 set title
 set hidden
 ""indentation
-set tabstop=4 softtabstop=4 noexpandtab
-set shiftwidth=4
+set tabstop=2 softtabstop=2 noexpandtab
+set shiftwidth=2
 set expandtab
 set autoindent
 set expandtab
