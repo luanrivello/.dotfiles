@@ -63,6 +63,7 @@ alias pontoautomatico='java -jar /mnt/Storage/programs/all/pontoAutomatico.jar'
 alias dk='sudo docker'
 
 #Bookmarks
+alias stronghold='cd /run/media/thermal/Stronghold'
 alias storage='cd /mnt/Storage/'
 #alias shows='cd /mnt/Storage/shows/ 2>&1 && ls | sed "s/ (.*$//" | sed "s/^\[.*\] //" | sed "s/ S\([0-9]\) -/ \1 -/"i'
 alias shows='cd /mnt/Storage/shows/ && clear && colapse'

@@ -3,5 +3,5 @@
 #sleep 10 && glava --force-mod=radial --desktop
 #sleep 10 && glava --force-mod=graph --desktop &
 #sleep 4
-sleep 10 && glava --force-mod=bars --desktop
+#sleep 10 && glava --force-mod=bars --desktop
 
