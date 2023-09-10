@@ -82,7 +82,6 @@ alias music='cd /mnt/Storage/babel/music'
 
 #Ambient
 alias v="nvim"
-alias n="n -e -Pp -t30"
 alias nnn="n -e -Pp -t30"
 alias extract="tar -extract"
 alias dk='sudo docker'
