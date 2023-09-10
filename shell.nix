@@ -1,7 +1,7 @@
 { pkgs ? import <nixpkgs> {} }:
 
 pkgs.mkShell {
-  nativeBuidInputs = [ pkgs.stow ];
+  nativeBuildInputs = [ pkgs.stow ];
   
   shellHook = ''
     echo "DOTFILES"
