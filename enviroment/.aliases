@@ -45,12 +45,17 @@ alias remove='sudo pacman -Rsu'
 alias update='sudo pacman -Syu'
 alias search='sudo pacman -Ss'
 ##Nixos
-alias nixos="cd /etc/nixos/"
+alias nixos="cd ~/nixos-config/"
+alias install="nix-shell -p"
+alias remove="nix-shell -e"
 alias update="sudo nix-channel --update && sudo nixos-rebuild switch --upgrade"
-alias rebuild="sudo nixos-rebuild switch && shutdown -r now"
+alias rebuild="cd ~/nixos-config/ && sudo nixos-rebuild switch --flake .# && shutdown -r now"
 alias envls="nix-env -q"
+alias gc="nix-store --gc"
+alias dev="nix develop -c zsh"
 #alias install="nix-env -i"
 #alias remove="nix-env --remove"
+#
 #Etc
 alias commit='git add . && git commit -m'
 alias indot='stow'
