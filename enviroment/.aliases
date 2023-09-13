@@ -48,23 +48,19 @@ alias search='sudo pacman -Ss'
 alias nixos="cd ~/nixos-config/"
 alias install="nix-shell -p"
 alias remove="nix-shell -e"
-alias update="sudo nix-channel --update && sudo nixos-rebuild switch --upgrade"
-alias rebuild="cd ~/nixos-config/ && sudo nixos-rebuild switch --flake .# && shutdown -r now"
+alias update="doas nix-channel --update && sudo nixos-rebuild switch --upgrade"
+alias rebuild="cd ~/nixos-config/ && doas nixos-rebuild switch --flake .# && shutdown -r now"
+alias envin="nix-env -i"
+alias envrm="nix-env --remove"
 alias envls="nix-env -q"
 alias gc="nix-store --gc"
 alias dev="nix develop -c zsh"
-#alias install="nix-env -i"
-#alias remove="nix-env --remove"
-#
+
 #Etc
 alias commit='git add . && git commit -m'
 alias indot='stow'
 alias undot='stow -D'
 alias redot='stow -R'
-alias umysite='sudo rsync -vr --delete-during --exclude '.git/' --exclude '.vscode/' --exclude 'README.md'--exclude '.gitignore' /run/media/$USER/Storage/codes/html-css-js/my-site/ /srv/http/ && systemctl restart httpd'
-alias brired='xrandr --output DisplayPort-0 --brightness 0.3 && xrandr --output HDMI-A-0 --brightness 0.3'
-alias brires='xrandr --output DisplayPort-0 --brightness 0.9 && xrandr --output HDMI-A-0 --brightness 0.9'
-alias pontoautomatico='java -jar /mnt/Storage/programs/all/pontoAutomatico.jar'
 alias dk='sudo docker'
 
 #Bookmarks
