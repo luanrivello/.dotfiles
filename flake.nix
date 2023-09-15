@@ -6,15 +6,11 @@
   };
 
   outputs = { self, nixpkgs }:
-  let
-    system = "x86_64-linux";
-    pkgs = import nixpkgs { inherit system; };
-  in
-  {
-    devShells.x86_64-linux.default = 
-      pkgs.mkShell {
-        name = "dotfiles";
-        nativeBuildInputs = [ pkgs.stow ];
-      };
-  };
+    let
+      system = "x86_64-linux";
+      pkgs = import nixpkgs { inherit system; };
+    in
+    {
+      devShells.x86_64-linux.default = (import ./shell.nix { inherit pkgs; });
+    };
 }
