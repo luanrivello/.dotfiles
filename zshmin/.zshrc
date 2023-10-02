@@ -25,6 +25,7 @@ plug "zsh-users/zsh-autosuggestions"
 plug "$HOME/.config/zsh/.zshenv"
 plug "$HOME/.enviroment"
 plug "$HOME/.aliases"
+plug "$HOME/.config/nnn/nnn.sh"
 
 # keybinds
 #bindkey '^ ' autosuggest-accept
