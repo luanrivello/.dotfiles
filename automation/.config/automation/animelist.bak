@@ -87,6 +87,8 @@ echo ""
 
 [ "$resp" != "null" ] && echo $resp && echo "-- Falha ao atualizar ep --" && exit 1
 
+grep -q "$1" ./anilist.txt && sed -i "s/$1.*/$1@$2/" anilist.txt || echo $1@$2 >> anilist.txt
+
 echo "-- Atualizado com Sucesso --"
 
 exit 0
