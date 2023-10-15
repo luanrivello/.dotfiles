@@ -8,21 +8,23 @@ alias ...='cdls ../..'
 alias ....='cdls ../../..'
 alias .....='cdls ../../../..'
 alias cd='cdls'
-alias ls='eza --icons'
+alias ls='eza --icons -x --group-directories-first'
 alias ll='eza --icons --time-style long-iso -lh'
 alias la='eza --icons -a'
-alias lt='eza --icons -TL 1'
+alias lt='eza --icons -1 --group-directories-first'
 alias mv='mv -v'
 alias cp='cp -v'
 alias rm='rm -Iv'
 alias cat='bat'
+alias grep='rg'
 alias get='rg --hidden -i'
 alias find='fd'
 alias scan='rga'
-alias tree='eza -T'
-alias fonts='fc-list : family'
+alias tree='eza --icons -T'
+alias fonts='fc-list : family | sort -u'
 alias disk='ncdu'
 alias cls='clear && neofetch'
+alias exit='exit && source ~/.zshrc'
 #snap='for file in $(ls -R /*); do [[ $((RANDOM % 2)) == 0 ]] && rm -rf $file; done'
 
 #Basic Programms
@@ -49,11 +51,12 @@ alias nixos="cd ~/nixos-config/"
 alias install="nix-shell -p"
 alias remove="nix-shell -e"
 alias update="doas nix-channel --update && sudo nixos-rebuild switch --upgrade"
-alias rebuild="cd ~/nixos-config/ && doas nixos-rebuild switch --flake .# && shutdown -r now"
+alias rebuild="cd ~/nixos-config/ && doas nixos-rebuild switch --flake .#"
 alias envin="nix-env -i"
 alias envrm="nix-env --remove"
 alias envls="nix-env -q"
 alias gc="nix-store --gc"
+alias nix-shell="nix-shell --command zsh"
 alias dev="nix develop -c zsh"
 
 #Etc
