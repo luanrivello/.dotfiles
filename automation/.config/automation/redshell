@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 #TO DO check if h1 > h2 or h2 < h1 for yesterday and today set
-h1="17:40"
+h1="18:00"
 h2="06:00"
 
 bstart=0.9
-bend=0.25
+bend=0.30
 #bcurrent=0"$(echo "scale=2;$bstart -0.01" | bc)"
 bcurrent=$bstart
 btransitions="$(echo "scale=0;($bcurrent -$bend)*100/1" | bc)"

@@ -4,18 +4,20 @@
 export ZDOTDIR=$HOME/.config/zsh
 
 ## for every file in automation
-for script in $HOME/.config/automation/*; do
-    echo $script
-    $script &
-done
+#for script in $HOME/.config/automation/*; do
+#    echo $script
+#    $script &
+#done
+
+$HOME/.config/automation/redshell &
 
 #nitrogen --restore
 #sleep 1
 #picom --experimental-backends -b
-picom -b
+#picom -b
 #clipit
 #polybar main -r
-xautolock -time 30 -locker blurlock
+#xautolock -time 30 -locker blurlock
 #xrandr --output DisplayPort-0 --mode 1920x1080 --rotate right --left-of HDMI-A-0
 #xrandr --output HDMI-A-0 --mode 2560x1080
 xrandr --output DisplayPort-0 --mode 1920x1080 --pos 0x0 --rotate right --output DisplayPort-1 --off --output DisplayPort-2 --off --output HDMI-A-0 --primary --mode 2560x1080 --pos 1080x212 --rotate normal
