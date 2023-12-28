@@ -9,8 +9,8 @@ alias ....='cdls ../../..'
 alias .....='cdls ../../../..'
 alias cd='cdls'
 alias ls='eza --icons -x --group-directories-first'
-alias ll='eza --icons --time-style long-iso -lh'
-alias la='eza --icons -a'
+alias ll='eza --icons --time-style long-iso -lh --group-directories-first'
+alias la='eza --icons -a --group-directories-first'
 alias lt='eza --icons -1 --group-directories-first'
 alias mv='mv -v'
 alias cp='cp -v'
@@ -42,22 +42,26 @@ alias print='lp -d HP_Smart_Tank_510_series_39F406'
 
 #Operations
 ##Arch
-alias install='sudo pacman -S'
-alias remove='sudo pacman -Rsu'
-alias update='sudo pacman -Syu'
-alias search='sudo pacman -Ss'
+#alias install='sudo pacman -S'
+#alias remove='sudo pacman -Rsu'
+#alias update='sudo pacman -Syu'
+#alias search='sudo pacman -Ss'
+
 ##Nixos
 alias nixos="cd ~/nixos-config/"
 alias install="nix-shell -p"
 alias remove="nix-shell -e"
 alias update="doas nix-channel --update && sudo nixos-rebuild switch --upgrade"
-alias rebuild="cd ~/nixos-config/ && doas nixos-rebuild switch --flake .#"
+alias rebuild="cd ~/nixos-config/ && doas nixos-rebuild switch --flake .#nexus"
 alias envin="nix-env -i"
 alias envrm="nix-env --remove"
 alias envls="nix-env -q"
 alias gc="nix-store --gc"
 alias nix-shell="nix-shell --command zsh"
 alias dev="nix develop -c zsh"
+alias kobold="nix run .#koboldai-amd"
+alias txtgen="nix run .#textgen-amd"
+alias invoke="nix run .#invokeai-amd"
 
 #Etc
 alias commit='git add . && git commit -m'
@@ -71,9 +75,9 @@ alias stronghold='cd /mnt/Stronghold'
 alias storage='cd /mnt/Storage/'
 #alias shows='cd /mnt/Storage/shows/ 2>&1 && ls | sed "s/ (.*$//" | sed "s/^\[.*\] //" | sed "s/ S\([0-9]\) -/ \1 -/"i'
 alias shows='cd /mnt/Stronghold/shows/ && clear && colapse'
-alias codes='cd /mnt/Storage/codes/'
+alias codes='cd /mnt/Stronghold/codes/'
 alias ccc='cd /mnt/Storage/ccc/'
-alias media='cd /mnt/Storage/multimedia/'
+alias media='cd /mnt/Stronghold/multimedia/'
 alias workshop='cd $HOME/Desktop/'
 alias dotfiles='cd $HOME/.dotfiles/'
 alias babel='cd /mnt/Storage/babel'
@@ -82,7 +86,7 @@ alias music='cd /mnt/Storage/babel/music'
 #Ambient
 alias v="nvim"
 alias nnn="n -e -Pp -t30"
-alias extract="tar -extract"
+alias extract="tar --extract"
 alias dk='sudo docker'
 alias sxiv='devour sxiv -faq'
 alias mpv='devour mpv'
