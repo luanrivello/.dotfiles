@@ -1,11 +1,5 @@
-# Theme
-ZSH_THEME="spaceship"
-source spaceship.zsh
-
 # Autocomplete Hidden
 setopt globdots
-
-#set -o vi
 
 #My Functions
 animeupdate() {
@@ -36,7 +30,7 @@ cdrec() {
 }
 
 cdls() {
-    cdrec "$@" && exa -a --icons
+    cdrec "$@" && exa --icons --group-directories-first -x
 }
 #End My Functions
 

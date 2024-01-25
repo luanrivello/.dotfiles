@@ -3,7 +3,7 @@
 #Microphone Pytorch
 
 #Bluetooth
-aparelho="JBL Free"
+aparelho="JBL ENDURANCE PEAK 3"
 bltconnected="Connected: no"
 
 check_connection () {
@@ -15,31 +15,35 @@ check_connection () {
 
 sleep 5
 
-bluetoothctl devices | cut -f2 -d' ' | while read uuid; do bluetoothctl info $uuid; done | \
-grep -e "Device\|Connected\|Name" | grep -A 1 "$aparelho" | sed '2!d' \
+bluetoothctl scan on &
+ADDR=$(bluetoothctl devices | grep -A 1 "$aparelho" | cut -f2 -d ' ')
+bluetoothctl pair $ADDR
+bluetoothctl connect $ADDR
+#bluetoothctl devices | cut -f2 -d' ' | while read uuid; do bluetoothctl info $uuid; done | \
+#grep -e "Device\|Connected\|Name" | grep -A 1 "$aparelho" | sed '2!d' \
 
 #Equalizer
-pulseaudio-equalizer enable &
-while true
-do
-    sleep 3
-    check_connection
-    if [[ $bltconnected == *"Connected: yes"* ]]
-    then
-        sleep 4
-        result="$( pacmd list-sinks | grep -B 27 "$aparelho" | grep "name: " )"
-        result="$(echo ${result:7} | sed "s/[<,>]//g" )"
-        pacmd set-default-sink "$result"
-
-        pulseaudio-equalizer enable
-
-        while [[ $bltconnected == *"Connected: yes"* ]]
-        do
-            sleep 3
-            check_connection
-        done
-
-        pulseaudio-equalizer enable
-    fi
-done
+#pulseaudio-equalizer enable &
+#while true
+#do
+#    sleep 3
+#    check_connection
+#    if [[ $bltconnected == *"Connected: yes"* ]]
+#    then
+#        sleep 4
+#        result="$( pacmd list-sinks | grep -B 27 "$aparelho" | grep "name: " )"
+#        result="$(echo ${result:7} | sed "s/[<,>]//g" )"
+#        #pacmd set-default-sink "$result"
+#
+#        #pulseaudio-equalizer enable
+#
+#        while [[ $bltconnected == *"Connected: yes"* ]]
+#        do
+#            sleep 3
+#            check_connection
+#        done
+#
+#        #pulseaudio-equalizer enable
+#    fi
+#done
 

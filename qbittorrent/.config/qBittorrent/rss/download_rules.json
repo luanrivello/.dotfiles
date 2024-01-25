@@ -2,14 +2,15 @@
     "temporada": {
         "addPaused": null,
         "affectedFeeds": [
-            "https://subsplease.org/rss/?r=720"
+            "https://subsplease.org/rss/?r=720",
+            "https://subsplease.org/rss/?r=1080"
         ],
         "assignedCategory": "anime",
         "enabled": true,
         "episodeFilter": "",
         "ignoreDays": 0,
-        "lastMatch": "02 Oct 2023 17:01:20 +0000",
-        "mustContain": "spy | zom 100 | frieren | maken | kage no | goblin | stone | dead mount | mahoutskukai | hametsu no Oukoku ",
+        "lastMatch": "24 Jan 2024 15:01:21 +0000",
+        "mustContain": "sousou | leveling | kyoushitsu | meshi | Ao no Exorcist",
         "mustNotContain": "",
         "previouslyMatchedEpisodes": [
         ],

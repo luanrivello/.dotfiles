@@ -38,7 +38,7 @@ scrolling:
   multiplier: 3
 
 font:
-  size: 16
+  size: 18
 
   normal:
     family: CaskaydiaCove Nerd Font

@@ -1,31 +1,32 @@
 #!/bin/usr/env sh
 
-ZDOTDIR=$HOME/.config/zsh
-HISTFILE=$HOME/.config/zsh/.zsh_history
+CONFIG=$HOME/.config
+ZDOTDIR=$CONFIG/zsh
+HISTFILE=$CONFIG/zsh/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
 # Plugin Zap
-# zap update && zap clean
+#zap update && zap clean
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh" \
 || zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh)
 
 # source
-
 #plug "zap-zsh/fzf"
 plug "spaceship-prompt/spaceship-prompt"
 plug "spaceship-prompt/spaceship-vi-mode"
-plug "$HOME/.config/zsh/spaceship.zsh"
+plug "$CONFIG/zsh/spaceship.zsh"
 
 plug "zap-zsh/vim"
 plug "hlissner/zsh-autopair"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "zsh-users/zsh-autosuggestions"
+plug "jeffreytse/zsh-vi-mode"
 
-plug "$HOME/.config/zsh/.zshenv"
+plug "$CONFIG/zsh/.zshenv"
 plug "$HOME/.enviroment"
 plug "$HOME/.aliases"
-plug "$HOME/.config/nnn/nnn.sh"
+plug "$CONFIG/nnn/nnn.sh"
 
 # keybinds
 #bindkey '^ ' autosuggest-accept
@@ -35,6 +36,21 @@ plug "$HOME/.config/nnn/nnn.sh"
 autoload -U compinit && compinit
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
 
-eval spaceship_vi_mode_enable
+# Shell startup
+[ $SHLVL -eq 1 ] && neofetch
 
-cls
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/dareggon/.conda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/dareggon/.conda/etc/profile.d/conda.sh" ]; then
+        . "/home/dareggon/.conda/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/dareggon/.conda/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

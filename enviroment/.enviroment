@@ -47,5 +47,9 @@ export JAVA_HOME="/usr/lib/java-14-openjdk"
 export PATH="$PATH:$JAVA_HOME/bin"
 
 # Go
-export GOPATH="/run/media/$USER/Storage/codes/go"
-export PATH="$PATH:/run/media/$USER/Storage/codes/go/bin"
+export GOPATH="/mnt/Stronghold/codes/go"
+export PATH="$PATH:$GOPATH/bin"
+
+# Python
+#export CONDA="$HOME/.conda/bin/"
+#export PATH="$PATH:$CONDA"

@@ -3,7 +3,7 @@ syntax on
 "config
 set nu
 set relativenumber
-set nowrap
+"set nowrap"
 set clipboard+=unnamedplus
 "set wrap linebreak"
 set showmatch
