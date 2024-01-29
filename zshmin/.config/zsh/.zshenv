@@ -3,7 +3,7 @@ setopt globdots
 
 #My Functions
 animeupdate() {
-    devour mpv -fs "$@" && \
+    mpv -fs "$@" && \
 
     if [[ $(basename "$PWD") == "shows" ]]; then
         title=$(echo $@ | sed "s/ (.*$//" | sed "s/^\[.*\] //" | sed 's/\<0//g' | sed "s/ S\([0-9]\) -/ \1 -/")

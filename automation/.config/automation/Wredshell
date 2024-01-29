@@ -150,7 +150,8 @@ do
             echo !times updated!
         fi
 
-        _adjust "$bstart" "$redstart"
+        #pre transition
+        #_adjust "$bstart" "$redstart"
 
         waitingtime=$(($(date +%s -d "$transition") - $(date +%s -d "$currenttime")))
         if [[ $waitingtime -gt 0 ]];
