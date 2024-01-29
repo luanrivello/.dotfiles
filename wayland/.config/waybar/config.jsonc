@@ -1,8 +1,29 @@
 {
-	"layer": "top",
+	"output":  "HDMI-A-1",
+	"layer":   "top",
+	"height":  "10",
+  "margin":  "8 16 0 16",
+  "spacing": "0",
+
 	"modules-left": ["custom/launcher","cpu","memory","custom/media","tray"],
-	"modules-center": ["river/tags"],
+	"modules-center": ["sway/workspaces river/tags"],
 	"modules-right": ["backlight","pulseaudio","clock", "battery","custom/power"],
+
+  "sway/workspaces": {
+      "disable-scroll": true,
+      "all-outputs": true,
+      "format": "{name}: {icon}",
+      "format-icons": {
+          "1": "",
+          "2": "",
+          "3": "",
+          "4": "",
+          "5": "",
+          "urgent": "",
+          "focused": "",
+          "default": ""
+      }
+  },
 	
 	"pulseaudio": {
 		"tooltip": false,
@@ -54,7 +75,7 @@
 		"spacing": 10
 	},
     "clock": {
-        "format": "{:%p %I:%M %a %d日 %m月 %Y年}"
+        "format": "{:%a %I:%M%p %d日 %m月 %Y年}"
     },
     "cpu": {
         "interval": 15,
@@ -86,7 +107,7 @@
     },
     "custom/power":{
         "format": "󰤆 ",
-        "on-click": "bash ~/.config/rofi/leave/leave.sh",
+        "on-click": "bash ~/.config/rofi/leave/leave.sh"
     },
     "custom/wallpaper":{
         "format":" ",

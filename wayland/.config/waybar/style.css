@@ -8,7 +8,7 @@
 }
 
 window#waybar {
-	/* background: transparent; */
+	background: #111111; 
 }
 
 window#waybar.hidden {
@@ -76,9 +76,9 @@ window#waybar.hidden {
 #pulseaudio {
 	margin-top: 6px;
 	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
 	margin-bottom: 0px;
+	padding-left: 6px;
+	padding-right: 6px;
 	transition: none;
 	color: #FFFFFF;
 }
