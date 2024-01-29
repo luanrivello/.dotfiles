@@ -14,6 +14,17 @@ red = "#DC0B0B"
 white = "#FFFFFF"
 yellow = "#EE5555"
 
+[colors.normal]
+black = "#000000"
+blue = "#FFAF00"
+cyan = "#FFFFFF"
+green = "#FFCC44"
+magenta = "#FFAF00"
+red = "#DC0B0B"
+white = "#FFFFFF"
+yellow = "#EE5555"
+
+
 [colors.cursor]
 cursor = "#DC0B0B"
 text = "#111111"
@@ -33,16 +44,6 @@ foreground = "#DC0B0B"
 [colors.line_indicator]
 background = "#000000"
 foreground = "#DC0B0B"
-
-[colors.normal]
-black = "#000000"
-blue = "#FFAF00"
-cyan = "#FFFFFF"
-green = "#FFCC44"
-magenta = "#FFAF00"
-red = "#DC0B0B"
-white = "#FFFFFF"
-yellow = "#EE5555"
 
 [colors.primary]
 background = "#111111"
