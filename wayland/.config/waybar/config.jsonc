@@ -14,17 +14,14 @@
       "sort-by-number": true,
       "format": "{icon}",
       "format-icons": {
-          "urgent": "",
-          "active": "",
+          "urgent":  "",
+          "active":  "",
           "default": ""
       }
       //"persistent-workspaces": { "*": 5 }
   },
   "hyprland/window": {
-    "format": "{class}",
-    "rewrite": {
-        "(.*) - fish": "> [$1]"
-    },
+    "format": "{title}",
     "separate-outputs": false
   },
   "hyprland/language": {
@@ -114,6 +111,6 @@
   },
   "custom/power":{
       "format": "󰿅",
-      "on-click": ""
-  },
+      "on-click": "shutdown now"
+  }
 }

@@ -11,10 +11,6 @@ window#waybar {
 	border-radius: 20px;
 }
 
-window#waybar.hidden {
-	opacity: 0.2;
-}
-
 #window {
 	transition: none;
   color: #FFFFFF;
@@ -37,12 +33,12 @@ window#waybar.hidden {
 	transition: none;
 	box-shadow: none;
 	text-shadow: none;
-  color: #AAAAAA;
   background-color: inherit;
+  color: #AAAAAA;
 }
 
 #window {
-	padding: 0px 4px 0px 120px;
+	padding: 0px 140px 0px 120px;
 }
 
 #network {
