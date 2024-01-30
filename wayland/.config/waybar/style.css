@@ -8,7 +8,7 @@
 window#waybar {
 	background: #111111; 
 	border: none;
-	border-radius: 20;
+	border-radius: 20px;
 }
 
 window#waybar.hidden {
@@ -41,6 +41,10 @@ window#waybar.hidden {
   background-color: inherit;
 }
 
+#window {
+	padding: 0px 4px 0px 120px;
+}
+
 #network {
 	transition: none;
 	color: #FFFFFF;
@@ -53,10 +57,18 @@ window#waybar.hidden {
 	padding: 0px 8px 0px 8px;
 }
 
+#bluetooth {
+	padding: 0px 4px 0px 8px;
+}
+
+#language {
+	padding: 0px 4px 0px 8px;
+}
+
 #battery {
 	transition: none;
 	color: #FFFFFF;
-	padding: 0px 8px 0px 8px;
+	padding: 0px 8px 0px 12px;
 }
 
 #battery.charging, #battery.plugged {
@@ -83,6 +95,10 @@ window#waybar.hidden {
 	transition: none;
 	color: #FFFFFF;
 	padding: 0px 8px 0px 8px;
+}
+
+#language {
+	padding: 0px 4px 0px 4px;
 }
 
 #clock {

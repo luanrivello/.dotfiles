@@ -1,12 +1,12 @@
 {
 	"output":  "HDMI-A-1",
 	"layer":   "top",
-	"height":  22,
-  "margin":  "8 16 0 16",
+	"height":  "22px",
+  "margin":  "8px 16px 0px 16px",
 
-	"modules-left": ["custom/launcher","tray"],
+	"modules-left": ["custom/launcher", "tray", "hyprland/window"],
 	"modules-center": ["hyprland/workspaces"],
-	"modules-right": ["bluetooth","pulseaudio","clock", "battery","custom/power"],
+	"modules-right": ["bluetooth", "pulseaudio", "hyprland/language", "clock", "battery", "custom/power"],
 
   "hyprland/workspaces": {
       "all-outputs": true,
@@ -18,12 +18,26 @@
           "active": "",
           "default": ""
       }
+      //"persistent-workspaces": { "*": 5 }
+  },
+  "hyprland/window": {
+    "format": "{class}",
+    "rewrite": {
+        "(.*) - fish": "> [$1]"
+    },
+    "separate-outputs": false
+  },
+  "hyprland/language": {
+    "format": "{}",
+    "format-pt": "dv",
+    "format-en": "us",
+    "on-click": "hyprctl switchxkblayout sino-wealth-gaming-kb--system-control next"
   },
 	"pulseaudio": {
 		"tooltip": false,
 		"scroll-step": 5,
 		"format": "{icon} {volume}%",
-		"format-muted": "󰝟 {volume}%",
+		"format-muted": "󰝟 00%",
 		"on-click":"amixer set Master toggle",
 
     "format-source": "",
@@ -40,7 +54,7 @@
 	},
   "bluetooth": {
     "format": "󰂲",
-    "format-disabled": "󰂲", // an empty format will hide the module
+    "format-disabled": "󰂲",
     "format-connected": "",
     "on-click": "toggle-bluetooth"
   },
@@ -101,5 +115,5 @@
   "custom/power":{
       "format": "󰿅",
       "on-click": ""
-  }
+  },
 }
