@@ -21,7 +21,7 @@
       //"persistent-workspaces": { "*": 5 }
   },
   "hyprland/window": {
-    "format": "{class} {title}",
+    "format": "{title}",
     "separate-outputs": false
   },
   "hyprland/language": {
