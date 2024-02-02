@@ -1,0 +1,68 @@
+#  ____                     _            _     
+# / ___|_      ____ _ _   _| | ___   ___| | __ 
+# \___ \ \ /\ / / _` | | | | |/ _ \ / __| |/ / 
+#  ___) \ V  V / (_| | |_| | | (_) | (__|   <  
+# |____/ \_/\_/ \__,_|\__, |_|\___/ \___|_|\_\ 
+#                     |___/                    
+
+font="IBM Plex Mono"
+font-size=48
+ignore-empty-password
+hide-keyboard-layout
+
+clock
+timestr=%R
+datestr=
+
+# screenshots
+image=~/Interface/desktop.png
+fade-in=1
+
+# Effects
+effect-blur=5x2
+# effect-greyscale
+# effect-pixelate=5
+
+indicator
+indicator-radius=150
+indicator-thickness=20
+indicator-caps-lock
+
+# Define colors
+separator-color=FFCC4400
+inside-color=00000055
+ring-color=111111FF
+line-color=00000000
+text-color=FFFFFFFF
+
+# Keypress
+key-hl-color=FFFFFFFF
+caps-lock-key-hl-color=FFFFFFFF
+caps-lock-bs-hl-color=DC0B0BFF
+bs-hl-color=DC0B0BFF
+
+# Clear
+inside-clear-color=FFFFFF00
+ring-clear-color=FFFFFFFF
+line-clear-color=FFFFFFFF
+text-clear-color=FFFFFFFF
+
+# CapsLock
+inside-caps-lock-color=EE555544
+ring-caps-lock-color=111111FF
+line-caps-lock-color=1111111F
+text-caps-lock-color=FFFFFFFF
+disable-caps-lock-text
+
+# Verification
+inside-ver-color=00000055
+ring-ver-color=111111FF
+line-ver-color=FFAF00FF
+text-ver-color=FFAF00FF
+
+# Wrong
+inside-wrong-color=00000055
+ring-wrong-color=111111FF
+line-wrong-color=DC0B0BFF
+text-wrong-color=DC0B0BFF
+

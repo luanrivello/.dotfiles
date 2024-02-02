@@ -17,7 +17,7 @@ configuration {
 
 // Global //
 * {
-	foreground:                  #cdd6f4ff; //Text
+	foreground:                  #ffffffff; //Text
 	normal-foreground:           @foreground;
 	urgent-foreground:           #11111bff; //Crust
 	active-foreground:           #11111bff; //Crust
@@ -32,16 +32,16 @@ configuration {
 
 	background:                  transparent;
 	normal-background:           @background;
-	urgent-background:           #eba0accc; //Maroon
-	active-background:           #94e2d5cc; //Teal
+	urgent-background:           #FFCC44FF;
+	active-background:           #FFAF00EE;
 
 	alternate-normal-background: @normal-background;
 	alternate-urgent-background: @urgent-background;
 	alternate-active-background: @active-background;
 
-	selected-normal-background:  #b4befeff; //Lavender
-	selected-urgent-background:  #94e2d5cc; //Teal
-	selected-active-background:  #eba0accc; //Maroon
+	selected-normal-background:  #EEEEEEFF;
+	selected-urgent-background:  #FFCC44EE;
+	selected-active-background:  #FFAF00EE;
 
 	separatorcolor:              transparent;
 	border-color:                transparent;
@@ -62,7 +62,7 @@ window {
     spacing:                     0px;
     padding:                     0px;
     border-radius:               50px;
-    border-color:                #f2cdcdff; //Flamingo
+    border-color:                #FFFFFFEE;
 }
 mainbox {
     enabled:                     true;
@@ -77,14 +77,15 @@ mainbox {
 // Inputs //
 inputbar {
     enabled:                     true;
-    //width:                       25%;
     width:                       0%;
-	children:                    [ "mode-switcher" , "entry" ];
-	background-color:            transparent;
-	//background-image:            url("~/.config/swww/wall.set", height);
+    children:                    [ "mode-switcher" , "entry" ];
+    background-color:            transparent;
+    //width:                       25%;
+    //background-image:            url("~/.config/swww/wall.set", height);
 }
 entry {
     enabled:                     false;
+    width:                       25%;
 }
 
 
@@ -96,6 +97,7 @@ mode-switcher{
 	background-image:            url("~/.config/swww/wall.blur", height);
     text-color:                  @foreground;
     width:                       2.5%;
+    min-width:                   50px;
     padding:                     160px 10px 160px 10px;
     spacing:                     25px;
 }
@@ -104,7 +106,10 @@ button {
     text-color:                  @foreground;
     cursor:                      pointer;
     border-radius:               50px;
+    min-width:                   20px;
+    padding:                     2px 6px 2px 2px;
 }
+
 button selected {
     background-color:            #11111be6; //Crust
     text-color:                  @urgent-background;
@@ -116,7 +121,7 @@ listbox {
     spacing:                     10px;
     padding:                     30px;
 	children:                    [ "listview" ];
-	background-color:            #11111be6; //Crust
+	background-color:            #111111FF; //Crust
 }
 listview {
     enabled:                     true;
@@ -131,7 +136,6 @@ listview {
     text-color:                  @foreground;
     cursor:                      "default";
 }
-
 
 // Elements //
 element {
