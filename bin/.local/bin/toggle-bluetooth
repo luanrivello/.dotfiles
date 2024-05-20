@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+device_name="F0:A9:68:62:0F:8F"
+
+if bluetoothctl info "$device_name" | grep -q "Connected: yes"; then
+    echo "Device is connected. Disconnecting..."
+    bluetoothctl disconnect "$device_name"
+else
+    echo "Device is not connected. Connecting..."
+    bluetoothctl connect "$device_name"
+fi

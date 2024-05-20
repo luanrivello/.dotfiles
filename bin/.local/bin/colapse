@@ -9,6 +9,8 @@ ls -p | grep -v / |
 sed "s/ (.*$//" | 
 sed "s/^\[.*\] //" | 
 sed "s/ S\([0-9]\) -/ \1 -/"i | 
+#sed 's/ [0-9]\+[0-9] /\n/g' #| grep -m1 '.'
+#sed 's/\( [0-9]\+[0-9] \).*/\1/'
 awk '
 {
     idx=""; 
@@ -38,3 +40,47 @@ while read line; do
     fi
 
 done <<< "$result"
+
+
+baseColor='\033[0;034m'
+numColor='\033[0;032m'
+markColor='\033[0;031m'
+
+#for each ls -p
+#sed 's/([^)]*)//g'
+#sed 's/\[[^]]*\]//g'
+#tr -d "'"
+###sed 's/^ *//'
+#sed 's/^[[:space:]]*//;s/[[:space:]]\+/ /g'
+#sed 's/\( [0-9]\+[0-9] \).*/\1/' #With numbers
+#sed 's/\( [0-9]\+[0-9] \).*//' #Before numbers
+#grep -o '...$' #last 2 numbers
+
+list=$(exa *.mkv -1 -f    |
+tr -d "'"           |
+sed 's/.mkv//g'     |
+sed 's/([^)]*)//g'  |
+sed 's/\[[^]]*\]//g'|
+sed 's/^[[:space:]]*//;s/[[:space:]]\+/ /g' |
+sed 's/\( [0-9]\+[0-9] \).*/\1/'
+)
+
+radical=""
+while read filename; do
+  actual=$filename
+
+  if [[ "$actual" == *"$radical"* ]]; then
+    ep="$(echo $actual | rg -o '...$')"
+    res="$res$numColor"
+    res="$res $ep"
+  else
+    echo -e $res$baseColor
+    final=$final$res$baseColor'\n'
+    res=$actual
+    radical="${actual::-2}" 
+  fi
+  prev=$actual
+done <<< "$list"
+
+echo -e $res$baseColor
+#echo -e $final
