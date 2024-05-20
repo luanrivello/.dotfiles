@@ -12,7 +12,44 @@
     "modules": [
         {
             "type": "custom", // HardwareStart
-            "format": "╭─────────── \u001b[1;35mHardware Information\u001b[0m ───────────╮" // `\u001b` is `\033`, or `\e`
+            "format": "╭─────────── \u001b[1;35mSoftware Information\u001b[0m ───────────╮" // `\u001b` is `\033`, or `\e`
+        },
+        {
+            "type": "kernel",
+            "key": "  ",
+            "format": "{1} {2}"
+        },
+        {
+            "type": "os",
+            "key": "  "
+        },
+        {
+            "type": "packages",
+            "key": "  󰏗"
+        },
+        {
+            "type": "de",
+            "key": "  "
+        },
+        {
+            "type": "wm",
+            "key": "  "
+        },
+        {
+            "type": "lm",
+            "key": "  󰹑"
+        },
+        {
+            "type": "terminal",
+            "key": "  "
+        },
+        {
+            "type": "shell",
+            "key": "  "
+        },
+        {
+            "type": "custom", // SoftwareStart
+            "format": "├─────────── \u001b[1;35mHardware Information\u001b[0m ───────────┤"
         },
         {
             "type": "host",
@@ -41,43 +78,6 @@
         {
             "type": "disk",
             "key": "  "
-        },
-        {
-            "type": "custom", // SoftwareStart
-            "format": "├─────────── \u001b[1;35mSoftware Information\u001b[0m ───────────┤"
-        },
-        {
-            "type": "kernel",
-            "key": "  ",
-            "format": "{1} {2}"
-        },
-        {
-            "type": "os",
-            "key": "  "
-        },
-        {
-            "type": "packages",
-            "key": "  󰏗"
-        },
-        {
-            "type": "de",
-            "key": "  "
-        },
-        {
-            "type": "wm",
-            "key": "  "
-        },
-        {
-            "type": "lm",
-            "key": "  󰧨"
-        },
-        {
-            "type": "terminal",
-            "key": "  "
-        },
-        {
-            "type": "shell",
-            "key": "  "
         },
         {
             "type": "custom", // InformationEnd
