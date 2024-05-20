@@ -23,7 +23,7 @@ alias scan='rga'
 alias tree='eza --icons -T'
 alias fonts='fc-list : family | sort -u'
 alias disk='ncdu'
-alias cls='clear && neofetch'
+alias cls='clear && fastfetch'
 alias exit='exit && source ~/.zshrc'
 #snap='for file in $(ls -R /*); do [[ $((RANDOM % 2)) == 0 ]] && rm -rf $file; done'
 
@@ -51,7 +51,7 @@ alias print='lp -d HP_Smart_Tank_510_series_39F406'
 alias nixos="cd ~/nixos-config/"
 alias install="nix-shell -p"
 alias remove="nix-shell -e"
-alias update="doas nix-channel --update && sudo nixos-rebuild switch --upgrade"
+alias update="doas nix-channel --update && cd ~/nixos-config/ && sudo nixos-rebuild switch --upgrade --flake .#nexus"
 alias rebuild="cd ~/nixos-config/ && doas nixos-rebuild switch --flake .#nexus"
 alias envin="nix-env -i"
 alias envrm="nix-env --remove"
