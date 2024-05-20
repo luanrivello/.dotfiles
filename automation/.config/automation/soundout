@@ -1,24 +1,27 @@
 #!/usr/bin/env bash
 
-#Microphone Pytorch
-
 #Bluetooth
-aparelho="JBL ENDURANCE PEAK 3"
-bltconnected="Connected: no"
+#aparelho="JBL ENDURANCE PEAK 3"
+#bltconnected="Connected: no"
 
 check_connection () {
-    bltconnected="$(\
-        bluetoothctl devices | cut -f2 -d' ' | while read uuid; do bluetoothctl info $uuid; done | \
-        grep -e "Device\|Connected\|Name" | grep -A 1 "$aparelho" | sed -n 2p \
-    )"
+    addr=$(bluetoothctl devices | cut -f2 -d' ')
+    connected=$(bluetoothctl info $addr | grep Connected | cut -f2 -d' ')
+    echo $connected
 }
 
-sleep 5
+while true
+do
+    if [[ $(check_connection) == "no" ]]; then
+      toggle-bluetooth
+    fi
+    sleep 3
+done
 
-bluetoothctl scan on &
-ADDR=$(bluetoothctl devices | grep -A 1 "$aparelho" | cut -f2 -d ' ')
-bluetoothctl pair $ADDR
-bluetoothctl connect $ADDR
+#bluetoothctl scan on &
+#ADDR=$(bluetoothctl devices | grep -A 1 "$aparelho" | cut -f2 -d ' ')
+#bluetoothctl pair $ADDR
+#bluetoothctl connect $ADDR
 #bluetoothctl devices | cut -f2 -d' ' | while read uuid; do bluetoothctl info $uuid; done | \
 #grep -e "Device\|Connected\|Name" | grep -A 1 "$aparelho" | sed '2!d' \
 
