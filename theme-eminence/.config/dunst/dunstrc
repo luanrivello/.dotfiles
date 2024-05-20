@@ -62,7 +62,7 @@ window {
     spacing:                     0px;
     padding:                     0px;
     border-radius:               50px;
-    border-color:                #f2cdcdff; //Flamingo
+    border-color:                #FFCC44; //Flamingo
 }
 mainbox {
     enabled:                     true;

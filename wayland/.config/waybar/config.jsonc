@@ -28,7 +28,7 @@
     "format": "{}",
     "format-pt": "dv",
     "format-en": "us",
-    "on-click": "hyprctl switchxkblayout sino-wealth-gaming-kb--system-control next"
+    "on-click": "hyprctl switchxkblayout sino-wealth-gaming-kb- next"
   },
 	"pulseaudio": {
 		"tooltip": false,
@@ -107,10 +107,12 @@
   "custom/launcher":{
       "format": " ",
       "on-click": "rofi -show drun",
-      "on-click-right": "killall rofi"
+      "on-click-right": "killall rofi",
+		  "tooltip": false
   },
   "custom/power":{
       "format": "󰿅",
-      "on-click": "shutdown now"
+      "on-click": "killall brave && shutdown now",
+		  "tooltip": false
   }
 }

@@ -37,20 +37,4 @@ autoload -U compinit && compinit
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
 
 # Shell startup
-[ $SHLVL -eq 1 ] && neofetch
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/dareggon/.conda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/dareggon/.conda/etc/profile.d/conda.sh" ]; then
-        . "/home/dareggon/.conda/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/dareggon/.conda/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
+[ $SHLVL -eq 1 ] && fastfetch
