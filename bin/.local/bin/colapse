@@ -1,86 +1,45 @@
 #!/usr/bin/env bash
 
-base=$(printf '\033[0;032m') 
-numbers=$(printf '\033[0;034m') 
-mark=$(printf '\033[0;031m') 
-
-result=$(\
-ls -p | grep -v / |
-sed "s/ (.*$//" | 
-sed "s/^\[.*\] //" | 
-sed "s/ S\([0-9]\) -/ \1 -/"i | 
-#sed 's/ [0-9]\+[0-9] /\n/g' #| grep -m1 '.'
-#sed 's/\( [0-9]\+[0-9] \).*/\1/'
-awk '
-{
-    idx=""; 
-    for(j=1;j<NF;j++) idx=idx" "$j
-}
-{
-    a[idx]=(idx in a)?a[idx]"'$base',"$NF:"'$base'"$NF
-}
-{
-    a[idx]=a[idx]"'$numbers'"
-}
-END{
-    for(i in a) print i,a[i]
-}
-'
+# Format files name
+# [SubsPlease] Konosuba - 01 (1080p) [hash].mkv --> Konosuba - 01
+animelist=$(exa *.mkv -1 -f                             |
+            tr -d "'"                                   |
+            sed 's/.mkv//g'                             |
+            sed 's/([^)]*)//g'                          |
+            sed 's/\[[^]]*\]//g'                        |
+            sed 's/^[[:space:]]*//;s/[[:space:]]\+/ /g' |
+            sed 's/\( [0-9]\+[0-9] \).*/\1/'
 )
 
-#echo "$result" | sed "s/02/${mark}02/"
-while read line; do
-    anime=$(echo "$line" | sed "s/\(.*\) - .*$/\1/g" | sed "s/-/ /g" | xargs)
-    saved=$(grep -F "$anime" anilist.txt) 
-    if [[ -n "$saved" ]]; then
-        ep=$(echo "$saved" | sed "s/^$anime@//g")
-        echo "$line" | sed "s/$ep/${mark}$ep/"
-    else
-        echo "$line"
-    fi
-
-done <<< "$result"
-
-
-baseColor='\033[0;034m'
-numColor='\033[0;032m'
-markColor='\033[0;031m'
-
-#for each ls -p
-#sed 's/([^)]*)//g'
-#sed 's/\[[^]]*\]//g'
-#tr -d "'"
-###sed 's/^ *//'
-#sed 's/^[[:space:]]*//;s/[[:space:]]\+/ /g'
-#sed 's/\( [0-9]\+[0-9] \).*/\1/' #With numbers
-#sed 's/\( [0-9]\+[0-9] \).*//' #Before numbers
-#grep -o '...$' #last 2 numbers
-
-list=$(exa *.mkv -1 -f    |
-tr -d "'"           |
-sed 's/.mkv//g'     |
-sed 's/([^)]*)//g'  |
-sed 's/\[[^]]*\]//g'|
-sed 's/^[[:space:]]*//;s/[[:space:]]\+/ /g' |
-sed 's/\( [0-9]\+[0-9] \).*/\1/'
-)
+baseColor='\033[0;034m' #Terminal Color
+numColor='\033[0;032m'  #Episode Numbers Color
+markColor='\033[0;031m' #Watched Episode Color
 
 radical=""
-while read filename; do
-  actual=$filename
+while read anime; do                                  # anime = Konosuba - 02
 
-  if [[ "$actual" == *"$radical"* ]]; then
-    ep="$(echo $actual | rg -o '...$')"
-    res="$res$numColor"
-    res="$res $ep"
+  if [[ "${anime::-2}" == "$radical" ]]; then         #|Konosuba -| 02 equals |Konosuba -|
+    ep=${anime: -2}                                   # Konosuba - |02|
+
+    if [[ "$ep" == "$watched" ]]; then                #|02| equals |02| Watched
+      ep=$markColor$ep$numColor                       #\Mark02\cl
+    fi
+
+    result="$result $ep"                              # Konosuba - 01| 02|
   else
-    echo -e $res$baseColor
-    final=$final$res$baseColor'\n'
-    res=$actual
-    radical="${actual::-2}" 
-  fi
-  prev=$actual
-done <<< "$list"
+    saved=$(grep -F "${anime::-5}" anilist.txt)       # Konosuba@02 Extracted from anilist.txt file
+    watched=${saved: -2}                              # Konosuba@|02|
 
-echo -e $res$baseColor
-#echo -e $final
+    #echo -e $result$baseColor                         # Konosuba - 01 02\Reset
+    finalResult=$finalResult$result$baseColor'\n'    # Konosuba - 01 02\Reset\n
+    
+    radical="${anime::-2}"                            # Konosuba -                <--*START*
+    result="$radical$numColor${anime: -2}"            # Konosuba - \cl01 
+  fi
+done <<< "$animelist"
+
+#echo -e $res$baseColor
+finalResult=$finalResult$result$baseColor'\n'
+echo -e $finalResult
+
+exit 0
