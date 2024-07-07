@@ -16,6 +16,7 @@ numColor='\033[0;032m'  #Episode Numbers Color
 markColor='\033[0;031m' #Watched Episode Color
 
 radical=""
+finalResult=$baseColor
 while read anime; do                                  # anime = Konosuba - 02
 
   if [[ "${anime::-2}" == "$radical" ]]; then         #|Konosuba -| 02 equals |Konosuba -|
@@ -31,6 +32,7 @@ while read anime; do                                  # anime = Konosuba - 02
     watched=${saved: -2}                              # Konosuba@|02|
 
     #echo -e $result$baseColor                         # Konosuba - 01 02\Reset
+    [ "$radical" != "" ] && 
     finalResult=$finalResult$result$baseColor'\n'     # Konosuba - 01 02\Reset\n
     
     radical="${anime::-2}"                            # Konosuba -                <--*START*
@@ -39,7 +41,7 @@ while read anime; do                                  # anime = Konosuba - 02
 done <<< "$animelist"
 
 #echo -e $res$baseColor
-finalResult=$finalResult$result$baseColor'\n'
+finalResult=$finalResult$result$baseColor
 echo -e $finalResult
 
 exit 0
