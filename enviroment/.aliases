@@ -63,6 +63,9 @@ alias kobold="nix run .#koboldai-amd"
 alias txtgen="nix run .#textgen-amd"
 alias invoke="nix run .#invokeai-amd"
 
+#Wayland Hyprland
+alias monitors="hyprctl monitors"
+
 #Etc
 alias commit='git add . && git commit -m'
 alias indot='stow'
