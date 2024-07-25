@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+[[ $(basename "$PWD") != "shows" ]] && echo "Out of folder" && exit 1
+[ ${#1} -le 1 ] && echo "Argument is too short." && exit 1
+
+
+anime=$(echo $1                                     |
+        tr -d "'"                                   |
+        sed 's/.mkv//g'                             |
+        sed 's/([^)]*)//g'                          |
+        sed 's/\[[^]]*\]//g'                        |
+        sed 's/^[[:space:]]*//;s/[[:space:]]\+/ /g' |
+        sed 's/\( [0-9]\+[0-9] \).*/\1/'
+)
+anime="${anime::-1}"
+ep=${anime: -2}
+anime="${anime::-5}"
+
+grep -q "$anime" ./anilist.txt && \
+sed -i "s/$anime.*/$anime@$ep/" anilist.txt || echo $anime@$ep >> anilist.txt
+echo ""
+echo "Local Update Successful"
+exit 0
