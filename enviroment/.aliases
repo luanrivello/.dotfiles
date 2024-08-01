@@ -48,11 +48,12 @@ alias print='lp -d HP_Smart_Tank_510_series_39F406'
 #alias search='sudo pacman -Ss'
 
 ##Nixos
-alias nixos="cd ~/nixos-config/"
+alias nixos="cd ~/nixos-config/ && clear && ls -T -L2"
 alias install="nix-shell -p"
 alias remove="nix-shell -e"
-alias update="doas nix-channel --update && cd ~/nixos-config/ && sudo nixos-rebuild switch --upgrade --flake .#nexus"
+alias update="doas nix-channel --update && cd ~/nixos-config/ && sudo nix flake update && sudo nixos-rebuild switch --upgrade --flake .#nexus && ls -T -L2 && nix flake metadata"
 alias rebuild="cd ~/nixos-config/ && doas nixos-rebuild switch --flake .#nexus"
+alias channels="nix-channel --list"
 alias envin="nix-env -i"
 alias envrm="nix-env --remove"
 alias envls="nix-env -q"
@@ -76,7 +77,6 @@ alias dk='sudo docker'
 #Bookmarks
 alias stronghold='cd /mnt/Stronghold'
 alias storage='cd /mnt/Storage/'
-#alias shows='cd /mnt/Storage/shows/ 2>&1 && ls | sed "s/ (.*$//" | sed "s/^\[.*\] //" | sed "s/ S\([0-9]\) -/ \1 -/"i'
 alias shows='cd /mnt/Stronghold/shows/ && clear && colapse'
 alias codes='cd /mnt/Stronghold/codes/'
 alias ccc='cd /mnt/Storage/ccc/'

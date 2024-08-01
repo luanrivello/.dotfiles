@@ -6,10 +6,22 @@ animeupdate() {
     mpv -fs "$@" && \
 
     if [[ $(basename "$PWD") == "shows" ]]; then
-        title=$(echo $@ | sed "s/ (.*$//" | sed "s/^\[.*\] //" | sed 's/\<0//g' | sed "s/ S\([0-9]\) -/ \1 -/")
-        anime=$(echo $title | awk -F "-" '{NF--; print}' | sed 's/-//g' | sed 's/[ \t]*$//g')
-        ep=$(echo $title | awk -F "-" '{print $NF}' | sed 's/ //g')
-        animelist $anime $ep
+        #title=$(echo $@ | sed "s/ (.*$//" | sed "s/^\[.*\] //" | sed 's/\<0//g' | sed "s/ S\([0-9]\) -/ \1 -/")
+        #anime=$(echo $title | awk -F "-" '{NF--; print}' | sed 's/-//g' | sed 's/[ \t]*$//g')
+        #anime=$(echo $@                             |
+        #        tr -d "'"                                   |
+        #        sed 's/.mkv//g'                             |
+        #        sed 's/([^)]*)//g'                          |
+        #        sed 's/\[[^]]*\]//g'                        |
+        #        sed 's/^[[:space:]]*//;s/[[:space:]]\+/ /g' |
+        #        sed 's/\( [0-9]\+[0-9] \).*/\1/'
+        #)
+        ##ep=$(echo $title | awk -F "-" '{print $NF}' | sed 's/ //g')        
+        #ep=${anime: -2}                                   # Konosuba - |02|
+        #animelist $anime $ep
+
+        write-local-anilist $@
+        #write-online-anilist $@
     fi
 
 }
@@ -30,7 +42,13 @@ cdrec() {
 }
 
 cdls() {
-    cdrec "$@" && exa --icons --group-directories-first -x
+    if [ -z "$@" ]; then
+        cd
+    elif [ -f "$@" ]; then
+        nvim "$@" 
+    else
+      cdrec "$@" && exa --icons --group-directories-first -x
+    fi
 }
 #End My Functions
 
