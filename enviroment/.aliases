@@ -25,6 +25,7 @@ alias fonts='fc-list : family | sort -u'
 alias disk='ncdu'
 alias cls='clear && fastfetch'
 alias exit='exit && source ~/.zshrc'
+alias printscreen='grim -g "$(slurp)"'
 #snap='for file in $(ls -R /*); do [[ $((RANDOM % 2)) == 0 ]] && rm -rf $file; done'
 
 #Basic Programms
@@ -51,7 +52,7 @@ alias print='lp -d HP_Smart_Tank_510_series_39F406'
 alias nixos="cd ~/nixos-config/ && clear && ls -T -L2"
 alias install="nix-shell -p"
 alias remove="nix-shell -e"
-alias update="doas nix-channel --update && cd ~/nixos-config/ && sudo nix flake update && sudo nixos-rebuild switch --upgrade --flake .#nexus && ls -T -L2 && nix flake metadata"
+alias update="doas nix-channel --update && cd ~/nixos-config/ && sudo nix flake update && sudo nixos-rebuild switch --upgrade --flake .#nexus && ls -T -L2 && doas nix flake metadata"
 alias rebuild="cd ~/nixos-config/ && doas nixos-rebuild switch --flake .#nexus"
 alias channels="nix-channel --list"
 alias envin="nix-env -i"
@@ -85,6 +86,7 @@ alias workshop='cd $HOME/Desktop/'
 alias dotfiles='cd $HOME/.dotfiles/'
 alias babel='cd /mnt/Storage/babel'
 alias music='cd /mnt/Storage/babel/music'
+alias steamapps='cd $HOME/.steam/steam/steamapps/common/'
 
 #Ambient
 alias v="nvim"
