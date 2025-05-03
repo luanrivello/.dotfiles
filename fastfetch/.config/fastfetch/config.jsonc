@@ -7,12 +7,12 @@
     //     "height": 12
     // },
     "display": {
-        "separator": " \u001b[1;35m\u001b[0m "
+        "separator": " \u001b[1;34m\u001b[0m "
     },
     "modules": [
         {
             "type": "custom", // HardwareStart
-            "format": "╭─────────── \u001b[1;35mSoftware Information\u001b[0m ───────────╮" // `\u001b` is `\033`, or `\e`
+            "format": "╭─────────── \u001b[1;34mSoftware Information\u001b[0m ───────────╮" // `\u001b` is `\033`, or `\e`
         },
         {
             "type": "kernel",
@@ -49,7 +49,7 @@
         },
         {
             "type": "custom", // SoftwareStart
-            "format": "├─────────── \u001b[1;35mHardware Information\u001b[0m ───────────┤"
+            "format": "├─────────── \u001b[1;34mHardware Information\u001b[0m ───────────┤"
         },
         {
             "type": "host",
@@ -85,7 +85,7 @@
         },
         {
             "type": "custom",
-            "format": "    \u001b[1;30m    \u001b[1;31m    \u001b[1;35m    \u001b[1;33m    \u001b[1;34m    \u001b[1;32m    \u001b[1;36m    \u001b[1;37m\u001b[0m"
+            "format": "        \u001b[1;30m    \u001b[1;32m    \u001b[1;34m    \u001b[1;33m    \u001b[1;35m    \u001b[1;31m    \u001b[1;37m\u001b[0m"
         }
     ]
 }

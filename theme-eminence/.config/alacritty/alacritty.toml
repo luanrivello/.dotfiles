@@ -1,26 +1,25 @@
-live_config_reload = true
 
 [colors]
 draw_bold_text_with_bright_colors = true
 transparent_background_colors = false
 
 [colors.bright]
-black = "#000000"
-blue = "#FFAF00"
-cyan = "#FFFFFF"
-green = "#FFCC44"
-magenta = "#FFAF00"
-red = "#DC0B0B"
-white = "#FFFFFF"
-yellow = "#EE5555"
-
-[colors.normal]
-black = "#000000"
+black = "#555555"
 blue = "#FFAF00"
 cyan = "#FFFFFF"
 green = "#FFCC44"
 magenta = "#68217A"
-red = "#DC0B0B"
+red = "#CC0B0B"
+white = "#FFFFFF"
+yellow = "#EE5555"
+
+[colors.normal]
+black = "#555555"
+blue = "#FFAF00"
+cyan = "#FFFFFF"
+green = "#FFCC44"
+magenta = "#68217A"
+red = "#CC0B0B"
 white = "#FFFFFF"
 yellow = "#EE5555"
 
@@ -558,3 +557,6 @@ lines = 0
 [window.padding]
 x = 20
 y = 20
+
+[general]
+live_config_reload = true
