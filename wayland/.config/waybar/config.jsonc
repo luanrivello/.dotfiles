@@ -26,6 +26,7 @@
   },
   "hyprland/language": {
     "format": "{}",
+    "min-length": 2,
     "format-pt": "dv",
     "format-en": "us",
     "on-click": "hyprctl switchxkblayout sino-wealth-gaming-kb- next"
@@ -79,7 +80,9 @@
 		"spacing": 10
 	},
   "clock": {
-      "format": "{:%a %I:%M%p %d日 %m月 %Y年}"
+      "locale": "ja_JP.utf8",
+      "format": "{:L%I:%M%p   %a %d日 %m月 %Y年}",
+		  "tooltip": false
   },
   "cpu": {
       "interval": 15,
