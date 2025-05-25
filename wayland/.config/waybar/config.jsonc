@@ -29,14 +29,15 @@
     "min-length": 2,
     "format-pt": "dv",
     "format-en": "us",
-    "on-click": "hyprctl switchxkblayout sino-wealth-gaming-kb- next"
+    "on-click": "hyprctl switchxkblayout all next && [[ \"$(setxkbmap -query | awk '/layout:/ {print $2}')\" == \"us\" ]] && setxkbmap br dvorak || setxkbmap us"
   },
 	"pulseaudio": {
 		"tooltip": false,
 		"scroll-step": 5,
 		"format": "{icon} {volume}%",
 		"format-muted": "󰝟 00%",
-		"on-click":"amixer set Master toggle",
+		//"on-click":"amixer set Master toggle",
+		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
 
     "format-source": "",
     "format-source-muted": "",
@@ -51,9 +52,9 @@
 		"format-ethernet": ""
 	},
   "bluetooth": {
-    "format": "󰂲",
-    "format-disabled": "󰂲",
-    "format-connected": "",
+    "format": "(󰂲)",
+    "format-disabled": "(󰂲)",
+    "format-connected": "({device_battery_percentage})",
     "on-click": "toggle-bluetooth"
   },
 	"backlight": {
@@ -82,7 +83,30 @@
   "clock": {
       "locale": "ja_JP.utf8",
       "format": "{:L%I:%M%p   %a %d日 %m月 %Y年}",
-		  "tooltip": false
+      "tooltip-format": "<tt><span size='12pt' font='CaskaydiaCove Nerd Font'>{calendar}</span></tt>",
+      "calendar": {
+          "mode"          : "month",
+          "mode-mon-col"  : 3,
+          "weeks-pos"     : "right",
+          //"weeks-pos"     : "",
+          "on-scroll"     : 1,
+          "format": {
+              "months":     "<span color='#ffffff'><b>{}</b></span>",
+              "days":       "<span color='#ffffff'><b>{}</b></span>",
+              "weeks":      "<span color='#ee5555'><b>W{}</b></span>",
+              "weekdays":   "<span letter_spacing='4000' size='12pt' color='#ffaf00'><b>{}</b></span>",
+              //"weekdays":   "",
+              "today":      "<span color='#cc0b0b' background='#000000'><b><u>{}</u></b></span>"
+          }
+      },
+          "actions":  {
+              "on-click-right": "mode",
+              "on-click-left": "mode",
+              "on-scroll-up": "tz_up",
+              "on-scroll-down": "tz_down",
+              "on-scroll-up": "shift_up",
+              "on-scroll-down": "shift_down"
+          } 
   },
   "cpu": {
       "interval": 15,

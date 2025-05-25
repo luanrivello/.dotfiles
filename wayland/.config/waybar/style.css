@@ -1,5 +1,5 @@
 * {
-  font-family: "CaskaydiaCove Nerd Font" ;
+  font-family: "CaskaydiaCove Nerd Font";
 	font-size: 18px;
 	min-height: 24px;
 	margin: 2px 0px 2px 0px;
@@ -149,4 +149,11 @@ window#waybar {
 #custom-media {
 	transition: none;
 	color: #FFFFFF;
+}
+
+tooltip {
+    border: solid 2px @fg;
+    background: #111111;
+    /*padding: 20px;*/
+    /*letter-spacing: 10px;*/
 }
