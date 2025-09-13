@@ -52,9 +52,9 @@
 		"format-ethernet": ""
 	},
   "bluetooth": {
-    "format": "(󰂲)",
-    "format-disabled": "(󰂲)",
-    "format-connected": "({device_battery_percentage})",
+    "format": "󰂲",
+    "format-disabled": "󰂲",
+    "format-connected": "",
     "on-click": "toggle-bluetooth"
   },
 	"backlight": {
