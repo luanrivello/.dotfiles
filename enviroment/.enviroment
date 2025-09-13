@@ -21,9 +21,10 @@ export XDG_VIDEOS_DIR="$HOME/Videos"
 
 # Default
 export EDITOR="nvim"
-export VISUAL="nvim"
-#export PAGER="nvim +Man!"
+export VISUAL="bat"
+export PAGER="bat"
 #export MANPAGER="nvim +Man!"
+export MANPAGER="bat"
 export SUDO_EDITOR="nvim"
 export TERMINAL="alacritty"
 export IMAGE="devour sxiv -f"
