@@ -1,8 +1,9 @@
 {
-	"output":  "DP-3",
+	"output":  "eDP-1",
+	//"output":  "DP-3",
 	"layer":   "top",
 	"height":  "22px",
-  "margin":  "8px 16px -10px 16px",
+  	"margin":  "8px 16px -10px 16px",
 
 	"modules-left": ["custom/launcher", "tray", "hyprland/window"],
 	"modules-center": ["hyprland/workspaces"],
@@ -66,15 +67,22 @@
 	},
   "battery": {
       "states": {
-          "good": 95,
-          "warning": 30,
-          "critical": 20
+        "good": 85,
+        "warning": 25,
+        "critical": 10
       },
-      "format": "{icon}  {capacity}%",
-      "format-charging": " {capacity}%",
-      "format-plugged": " {capacity}%",
-      "format-alt": "{time} {icon}",
-      "format-icons": ["", "", "", "", ""]
+      "format": "{icon}{capacity}%",
+      "format-charging": "󰂄{capacity}%",
+      "format-plugged": "󰚥{capacity}%",
+      "format-alt": "{icon} {time} ({power}W)",
+      "format-icons": [
+        "󰁺",  // 0–20%
+        "󰁻",  // 21–40%
+        "󰁼",  // 41–60%
+        "󰁽",  // 61–80%
+        "󰁹"   // 81–100%
+      ],
+      "interval": 5
   },
 	"tray":{
 		"icon-size":18,
@@ -83,7 +91,7 @@
   "clock": {
       "locale": "ja_JP.utf8",
       "format": "{:L%I:%M%p   %a %d日 %m月 %Y年}",
-      "tooltip-format": "<tt><span size='12pt' font='CaskaydiaCove Nerd Font'>{calendar}</span></tt>",
+      "tooltip-format": "<tt><span size='8pt' font='CaskaydiaCove Nerd Font'>{calendar}</span></tt>",
       "calendar": {
           "mode"          : "month",
           "mode-mon-col"  : 3,
