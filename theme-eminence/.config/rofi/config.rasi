@@ -1,128 +1,140 @@
 // Config //
 configuration {
-	modi:                        "drun,filebrowser,window,run";
-	show-icons:                  true;
-	display-drun:                "";
-	display-run:                 "";
-	display-filebrowser:         "";
-	display-window:              "";
-	drun-display-format:         "{name}";
-	window-format:               "{w}{t}";
-	font:                        "Fira Code Nerd Font 12";
-	icon-theme:                  "Tela-circle-dracula-dark";
+    modi:                        "drun,filebrowser,window,run";
+    show-icons:                  true;
+    display-drun:                "";
+    display-run:                 "";
+    display-filebrowser:         "";
+    display-window:              "";
+    drun-display-format:         "{name}";
+    window-format:               "{w}{t}";
+    font:                        "Fira Code Nerd Font 12";
+    icon-theme:                  "Tela-circle-dracula-dark";
 }
 
 //@theme "/dev/null"
 
 
-// Global //
+// Global palette //
 * {
-	foreground:                  #ffffffff; //Text
-	normal-foreground:           @foreground;
-	urgent-foreground:           #11111bff; //Crust
-	active-foreground:           #11111bff; //Crust
+    /* Core colors to match your desktop */
+    background:                  #0b0b0eff;   /* main bg (very dark)      */
+    foreground:                  #f5f5f5ff;   /* main text                 */
+    crust:                       #11111bff;   /* cards / surfaces          */
+    accent:                      #ffcc44ff;   /* main yellow accent        */
+    accent-alt:                  #ffaf00ff;   /* secondary accent/orange   */
 
-	alternate-normal-foreground: @normal-foreground;
-	alternate-urgent-foreground: @urgent-foreground;
-	alternate-active-foreground: @active-foreground;
+    normal-foreground:           @foreground;
+    urgent-foreground:           @crust;
+    active-foreground:           @crust;
 
-	selected-normal-foreground:  #11111bff; //Crust
-	selected-urgent-foreground:  #11111bff; //Crust
-	selected-active-foreground:  #11111bff; //Crust
+    alternate-normal-foreground: @normal-foreground;
+    alternate-urgent-foreground: @urgent-foreground;
+    alternate-active-foreground: @active-foreground;
 
-	background:                  transparent;
-	normal-background:           @background;
-	urgent-background:           #FFCC44FF;
-	active-background:           #FFAF00EE;
+    selected-normal-foreground:  @crust;
+    selected-urgent-foreground:  @crust;
+    selected-active-foreground:  @crust;
 
-	alternate-normal-background: @normal-background;
-	alternate-urgent-background: @urgent-background;
-	alternate-active-background: @active-background;
+    normal-background:           @background;
+    urgent-background:           @accent;
+    active-background:           @accent-alt;
 
-	selected-normal-background:  #EEEEEEFF;
-	selected-urgent-background:  #FFCC44EE;
-	selected-active-background:  #FFAF00EE;
+    alternate-normal-background: @normal-background;
+    alternate-urgent-background: @urgent-background;
+    alternate-active-background: @active-background;
 
-	separatorcolor:              transparent;
-	border-color:                transparent;
-	border-radius:               0px;
-	spacing:                     0px;
-	padding:                     0px;
-	height:                      55%;
+    selected-normal-background:  @accent;
+    selected-urgent-background:  @accent;
+    selected-active-background:  @accent-alt;
+
+    separatorcolor:              transparent;
+    border-color:                @accent;
+    border-radius:               0px;
+    spacing:                     0px;
+    padding:                     0px;
+
+    height:                      55%;
     width:                       45%;
 }
 
 
-// Main //
+// Main window //
 window {
     transparency:                "real";
     fullscreen:                  false;
     enabled:                     true;
     cursor:                      "default";
     spacing:                     0px;
-    padding:                     0px;
-    border-radius:               50px;
-    border-color:                #FFFFFFEE;
+    padding:                     8px;              /* inner padding for border */
+    border:                      2px;
+    border-radius:               32px;
+    border-color:                @accent;          /* yellow frame */
+    background-color:            @crust;
 }
+
 mainbox {
     enabled:                     true;
     spacing:                     0px;
-    background-color:            transparent;
+    background-color:            @crust;
     orientation:                 horizontal;
-    children:                    [  "inputbar" , "listbox" ];
-	//background-image:            url("~/.config/swww/wall.blur", height);
+    children:                    [ "inputbar" , "listbox" ];
+    //background-image:            url("~/.config/swww/wall.blur", height);
 }
 
 
-// Inputs //
+// Input bar //
 inputbar {
     enabled:                     true;
     width:                       0%;
-    children:                    [ "mode-switcher" , "entry" ];
-    background-color:            transparent;
-    //width:                       25%;
-    //background-image:            url("~/.config/swww/wall.set", height);
+    //children:                    [ "mode-switcher" , "entry" ];
+    children:                    [ "entry" ];
+    background-color:            @crust;
 }
+
 entry {
     enabled:                     false;
     width:                       25%;
 }
 
 
-// Modes //
+// Mode switcher column //
 mode-switcher{
     orientation:                 vertical;
     enabled:                     true;
-    spacing:                     0px;
-	background-image:            url("~/.config/swww/wall.blur", height);
+    spacing:                     24px;
+    //background-color:            @background;
+    //background-image:            url("~/.config/swww/wall.blur", height);
     text-color:                  @foreground;
-    width:                       2.5%;
-    min-width:                   50px;
-    padding:                     160px 10px 160px 10px;
-    spacing:                     25px;
+    width:                       4%;
+    min-width:                   60px;
+    padding:                     140px 12px 140px 10px;
 }
+
 button {
-    background-color:            #11111be6; //Crust
+    font:                        "Fira Code Nerd Font 14";
+    background-color:            @crust;
     text-color:                  @foreground;
     cursor:                      pointer;
-    border-radius:               50px;
-    min-width:                   20px;
-    padding:                     2px 6px 2px 2px;
+    border-radius:               999px;
+    min-width:                   10px;
+    padding:                     2px 8px 2px 2px;
 }
 
 button selected {
-    background-color:            #11111be6; //Crust
-    text-color:                  @urgent-background;
+    background-color:            @accent;
+    text-color:                  @crust;
 }
 
 
-// Lists //
+// List area //
 listbox {
     spacing:                     10px;
-    padding:                     30px;
-	children:                    [ "listview" ];
-	background-color:            #111111FF; //Crust
+    padding:                     30px 40px 30px 40px;
+    children:                    [ "listview" ];
+    background-color:            @crust;
 }
+
 listview {
     enabled:                     true;
     columns:                     1;
@@ -137,18 +149,20 @@ listview {
     cursor:                      "default";
 }
 
+
 // Elements //
 element {
     enabled:                     true;
-    spacing:                     30px;
-    padding:                     7px;
+    spacing:                     12px;
+    padding:                     10px 16px;
     border-radius:               20px;
-    background-color:            @background;
+    background-color:            transparent;
     text-color:                  @foreground;
     cursor:                      pointer;
 }
+
 element normal.normal {
-    background-color:            @normal-background;
+    background-color:            transparent;
     text-color:                  @normal-foreground;
 }
 element normal.urgent {
@@ -159,6 +173,7 @@ element normal.active {
     background-color:            @active-background;
     text-color:                  @active-foreground;
 }
+
 element selected.normal {
     background-color:            @selected-normal-background;
     text-color:                  @selected-normal-foreground;
@@ -171,12 +186,15 @@ element selected.active {
     background-color:            @selected-active-background;
     text-color:                  @selected-active-foreground;
 }
+
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
-    size:                        48px;
+    size:                        32px;
+    margin:                      0px 6px 0px 0px;
     cursor:                      inherit;
 }
+
 element-text {
     background-color:            transparent;
     text-color:                  inherit;
@@ -184,3 +202,4 @@ element-text {
     vertical-align:              0.5;
     horizontal-align:            0.0;
 }
+
