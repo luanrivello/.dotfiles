@@ -1,0 +1,93 @@
+##############################################
+#                                            #
+#          Alacritty Matching Theme          #
+#                                            #
+##############################################
+
+code_syntax_highlight = "eminence"
+
+###############################################################################
+# Base Colors
+###############################################################################
+
+# Full Screen
+full_screen_fg = "#FFFFFF"
+full_screen_bg = "#111111"
+
+# Gradient
+gradient_color = ["#EE5555", "#FFAF00"]
+directory_icon_color = "#FFCC44"
+
+###############################################################################
+# File Panel
+###############################################################################
+
+file_panel_fg = "#FFFFFF"
+file_panel_bg = "#111111"
+file_panel_border = "#555555"
+file_panel_border_active = "#FFCC44"
+
+file_panel_top_directory_icon = "#FFCC44"
+file_panel_top_path = "#FFAF00"
+
+file_panel_item_selected_fg = "#111111"
+file_panel_item_selected_bg = "#FFAF00"
+
+###############################################################################
+# Footer
+###############################################################################
+
+footer_fg = "#FFFFFF"
+footer_bg = "#111111"
+footer_border = "#555555"
+footer_border_active = "#FFCC44"
+
+###############################################################################
+# Sidebar
+###############################################################################
+
+sidebar_fg = "#FFFFFF"
+sidebar_bg = "#111111"
+
+sidebar_title = "#FFAF00"
+
+sidebar_border = "#111111"
+sidebar_border_active = "#FFCC44"
+
+sidebar_item_selected_fg = "#111111"
+sidebar_item_selected_bg = "#FFAF00"
+
+sidebar_divider = "#555555"
+
+###############################################################################
+# Modals
+###############################################################################
+
+modal_fg = "#FFFFFF"
+modal_bg = "#111111"
+
+modal_border_active = "#FFCC44"
+
+modal_cancel_fg = "#111111"
+modal_cancel_bg = "#EE5555"
+
+modal_confirm_fg = "#111111"
+modal_confirm_bg = "#FFCC44"
+
+###############################################################################
+# Help
+###############################################################################
+
+help_menu_hotkey = "#FFAF00"
+help_menu_title = "#EE5555"
+
+###############################################################################
+# Special
+###############################################################################
+
+cursor = "#DC0B0B"
+
+correct = "#FFCC44"
+error = "#CC0B0B"
+hint = "#FFFFFF"
+cancel = "#EE5555"

@@ -27,6 +27,7 @@ plug "$CONFIG/zsh/.zshenv"
 plug "$HOME/.enviroment"
 plug "$HOME/.aliases"
 plug "$CONFIG/nnn/nnn.sh"
+plug "$CONFIG/superfile/superfile.sh"
 
 # keybinds
 #bindkey '^ ' autosuggest-accept
